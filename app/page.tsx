@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import posthog from "posthog-js";
 
 export default function Home() {
   return (
@@ -40,6 +43,7 @@ export default function Home() {
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => posthog.capture("deploy_now_clicked")}
           >
             <Image
               className="dark:invert"
@@ -55,6 +59,7 @@ export default function Home() {
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => posthog.capture("documentation_clicked")}
           >
             Documentation
           </a>
