@@ -34,35 +34,31 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 h-20 flex items-center justify-between">
         <Link
           href="#top"
-          className="flex items-center gap-2 group"
+          className="flex items-center group"
           onClick={() => trackNavClick("logo")}
           aria-label="Saper Vedere — home"
         >
           <Image
-            src="/icon.png"
-            alt=""
-            width={28}
-            height={28}
+            src="/LogoSaperVedere.png"
+            alt="Saper Vedere"
+            width={528}
+            height={301}
             priority
-            className="h-7 w-7 object-contain"
+            className="h-11 w-auto object-contain sm:h-12"
+            sizes="(max-width: 640px) 140px, 170px"
           />
-          <span className="font-display text-lg tracking-tight text-[color:var(--ink)]">
-            Saper Vedere
-          </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => trackNavClick(l.label)}
-              className="px-3 py-2 text-sm text-[color:var(--muted)] hover:text-[color:var(--ink)] transition-colors"
+              className="px-3 py-2 text-sm text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
             >
               {l.label}
             </Link>
@@ -70,13 +66,12 @@ export default function Nav() {
           <Link
             href="#contact"
             onClick={() => trackNavClick("Book a call (nav)")}
-            className="ml-3 inline-flex items-center rounded-full bg-[color:var(--ink)] text-[color:var(--bg)] px-4 py-2 text-sm font-medium hover:bg-[color:var(--ink-soft)] transition-colors"
+            className="ml-3 inline-flex items-center rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] px-4 py-2 text-sm font-medium hover:bg-[color:var(--accent-hover)] transition-colors"
           >
             Book a call
           </Link>
         </nav>
 
-        {/* Mobile toggle */}
         <button
           type="button"
           className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md border border-[color:var(--border)] text-[color:var(--ink)]"
@@ -105,7 +100,6 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <nav className="md:hidden border-t border-[color:var(--border)] bg-[color:var(--bg)]">
           <div className="mx-auto max-w-6xl px-5 py-4 flex flex-col gap-1">
@@ -128,7 +122,7 @@ export default function Nav() {
                 trackNavClick("Book a call (mobile)");
                 setOpen(false);
               }}
-              className="mt-3 inline-flex items-center justify-center rounded-full bg-[color:var(--ink)] text-[color:var(--bg)] px-5 py-3 text-sm font-medium"
+              className="mt-3 inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] px-5 py-3 text-sm font-medium hover:bg-[color:var(--accent-hover)] transition-colors"
             >
               Book a call
             </Link>

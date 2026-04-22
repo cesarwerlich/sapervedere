@@ -6,7 +6,7 @@ import { track, Events } from "../lib/analytics";
 const CAL_EMBED =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0bthjlEmSeiF4N8Hu9B9knW7OvOqCVfvDyzNERqgHTz295Fx5mnYOnly9kH9ckBteoAlvT0Wtj?gv=true";
 const CAL_SHORT = "https://calendar.app.google/UrbapWUStc9WCJcF7";
-const EMAIL = "cesardw@gmail.com";
+const EMAIL = "cesar@sapervedere.com.br";
 const LINKEDIN = "https://www.linkedin.com/in/cesarwerlich";
 
 export default function Contact() {
@@ -61,7 +61,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <svg
-                  className="text-[color:var(--muted)] group-hover:text-[color:var(--ink)] transition-colors"
+                  className="text-[color:var(--muted)] group-hover:text-[color:var(--olive)] transition-colors"
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"
@@ -105,7 +105,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <svg
-                  className="text-[color:var(--muted)] group-hover:text-[color:var(--ink)] transition-colors"
+                  className="text-[color:var(--muted)] group-hover:text-[color:var(--olive)] transition-colors"
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"
@@ -145,7 +145,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <svg
-                  className="text-[color:var(--muted)] group-hover:text-[color:var(--ink)] transition-colors"
+                  className="text-[color:var(--muted)] group-hover:text-[color:var(--olive)] transition-colors"
                   width="16"
                   height="16"
                   viewBox="0 0 16 16"

@@ -18,14 +18,6 @@ export default function Hero() {
   return (
     <div id="top" className="relative pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        {/* Eyebrow */}
-        <div className="flex items-center gap-2 mb-6 sm:mb-8">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-[color:var(--accent)]" />
-          <span className="text-xs sm:text-sm uppercase tracking-[0.18em] text-[color:var(--muted)]">
-            Fractional COO · Operating Partner
-          </span>
-        </div>
-
         {/* Headline */}
         <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-6xl md:text-7xl tracking-tight text-[color:var(--ink)] max-w-4xl">
           The operator founders bring in when they need to{" "}
@@ -47,7 +39,7 @@ export default function Hero() {
           <Link
             href="#contact"
             onClick={() => onCta("Book a 30-min call")}
-            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--ink)] text-[color:var(--bg)] px-6 py-3 text-base font-medium hover:bg-[color:var(--ink-soft)] transition-colors"
+            className="inline-flex items-center gap-2 rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] px-6 py-3 text-base font-medium hover:bg-[color:var(--accent-hover)] transition-colors"
           >
             Book a 30-min call
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
