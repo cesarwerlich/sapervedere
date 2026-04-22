@@ -22,6 +22,27 @@
   color-scheme: light;
 }
 
+/* v2 approved palette lock (prevents browser/theme drift on production) */
+.theme-v2-approved {
+  --bg: #f7f3eb;
+  --surface: #ede6d6;
+  --surface-2: #e4dbc6;
+  --ink: #1a1410;
+  --ink-soft: #3b322a;
+  --muted: #6b6055;
+  --accent: #c65d3f;
+  --accent-hover: #a94a30;
+  --olive: #194162;
+  --border: rgba(26, 20, 16, 0.1);
+  --border-strong: rgba(26, 20, 16, 0.2);
+  --accent-subtle: rgba(198, 93, 63, 0.12);
+  --accent-ring: rgba(198, 93, 63, 0.32);
+  --olive-subtle: rgba(25, 65, 98, 0.18);
+  --selection-bg: #c65d3f;
+  --selection-fg: #f7f3eb;
+  color-scheme: light;
+}
+
 /* ===== Design tokens — dark mode ===== */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -160,4 +181,14 @@ body {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* theme-6 heading treatment */
+.theme-6-logo-blue-headings h1 {
+  color: var(--muted) !important;
+}
+
+.theme-6-logo-blue-headings h2,
+.theme-6-logo-blue-headings h3 {
+  color: #194162 !important;
 }
