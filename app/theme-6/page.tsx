@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 
 export default function Theme6Page() {
   return (
-    <div className="theme-v2-approved theme-6-logo-blue-headings">
+    <div className="theme-v2-blue theme-6-logo-blue-headings">
       <Nav />
       <main className="flex-1">
         <Hero />

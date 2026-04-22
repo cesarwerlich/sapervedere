@@ -22,23 +22,23 @@
   color-scheme: light;
 }
 
-/* v2 approved palette lock (prevents browser/theme drift on production) */
-.theme-v2-approved {
+/* v2 explicit blue palette for production parity */
+.theme-v2-blue {
   --bg: #f7f3eb;
   --surface: #ede6d6;
   --surface-2: #e4dbc6;
   --ink: #1a1410;
   --ink-soft: #3b322a;
   --muted: #6b6055;
-  --accent: #c65d3f;
-  --accent-hover: #a94a30;
+  --accent: #1a5c88;
+  --accent-hover: #194162;
   --olive: #194162;
   --border: rgba(26, 20, 16, 0.1);
   --border-strong: rgba(26, 20, 16, 0.2);
-  --accent-subtle: rgba(198, 93, 63, 0.12);
-  --accent-ring: rgba(198, 93, 63, 0.32);
-  --olive-subtle: rgba(25, 65, 98, 0.18);
-  --selection-bg: #c65d3f;
+  --accent-subtle: rgba(26, 92, 136, 0.14);
+  --accent-ring: rgba(26, 92, 136, 0.34);
+  --olive-subtle: rgba(25, 65, 98, 0.2);
+  --selection-bg: #1a5c88;
   --selection-fg: #f7f3eb;
   color-scheme: light;
 }
@@ -183,11 +183,8 @@ body {
   border-radius: 4px;
 }
 
-/* theme-6 heading treatment */
-.theme-6-logo-blue-headings h1 {
-  color: var(--muted) !important;
-}
-
+/* v2 heading treatment */
+.theme-6-logo-blue-headings h1,
 .theme-6-logo-blue-headings h2,
 .theme-6-logo-blue-headings h3 {
   color: #194162 !important;
