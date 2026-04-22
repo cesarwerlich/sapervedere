@@ -78,3 +78,11 @@ npm run start
 
 - Favicon is served from `public/favicon.ico`.
 - Theme routes are intentionally kept for design and copy comparison before finalizing.
+
+## Persistent Context Files
+
+To keep continuity across new chats/threads:
+
+- `README.md`: project overview and run/deploy basics
+- `ARCHITECTURE.md`: structure and implementation decisions
+- `CHANGELOG.md`: timeline of meaningful changes
