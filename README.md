@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saper Vedere Website
 
-## Getting Started
+Marketing site for Saper Vedere (fractional COO / operating partner), built with Next.js App Router.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16.2.4
+- React 19.2.4
+- TypeScript
+- Tailwind CSS 4
+- PostHog client analytics (`/ingest` proxy rewrites in `next.config.ts`)
+
+## Local Development
+
+Install dependencies and run dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This project runs on:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `http://localhost:3001`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Useful scripts
 
-## Learn More
+- `npm run dev` starts local development on port `3001`
+- `npm run lint` runs ESLint
+- `npm run build` creates a production build
+- `npm run start` serves the production build
 
-To learn more about Next.js, take a look at the following resources:
+## Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/` default production variant (currently theme-6 style)
+- `/theme-3` neutral grayscale variant
+- `/theme-4` blue-headings-only variant
+- `/theme-5` conversion-focused variant (proof block + sticky CTA + stage split)
+- `/theme-6` logo-blue heading variant
+- `/theme-7` dark image-led variant
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `app/page.tsx` default homepage route
+- `app/components/*` reusable sections (`Hero`, `Services`, `Companies`, `Contact`, etc.)
+- `app/globals.css` design tokens and global styling
+- `app/lib/analytics.ts` event helpers
+- `instrumentation-client.ts` PostHog initialization
+- `public/*` static assets (logos, favicon, imagery)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create `.env.local` with:
+
+```bash
+NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=...
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+```
+
+If PostHog vars are missing, tracking should be disabled in local testing workflows.
+
+## Deployment
+
+### Vercel (recommended)
+
+1. Connect repo to Vercel project.
+2. Set environment variables in Vercel (Production/Preview).
+3. Deploy from main branch or open PR previews.
+
+### Manual production check
+
+```bash
+npm run build
+npm run start
+```
+
+## Notes
+
+- Favicon is served from `public/favicon.ico`.
+- Theme routes are intentionally kept for design and copy comparison before finalizing.

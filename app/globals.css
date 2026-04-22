@@ -1,26 +1,163 @@
 @import "tailwindcss";
 
+/* ===== Design tokens — light mode (default) ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f7f3eb;
+  --surface: #ede6d6;
+  --surface-2: #e4dbc6;
+  --ink: #1a1410;
+  --ink-soft: #3b322a;
+  --muted: #6b6055;
+  --accent: #c65d3f;
+  --accent-hover: #a94a30;
+  --olive: #194162;
+  --border: rgba(26, 20, 16, 0.1);
+  --border-strong: rgba(26, 20, 16, 0.2);
+  --accent-subtle: rgba(198, 93, 63, 0.12);
+  --accent-ring: rgba(198, 93, 63, 0.32);
+  --olive-subtle: rgba(25, 65, 98, 0.18);
+  --selection-bg: #c65d3f;
+  --selection-fg: #f7f3eb;
+
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* ===== Design tokens — dark mode ===== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg: #0d0c0a;
+    --surface: #171614;
+    --surface-2: #201d19;
+    --ink: #f5f2eb;
+    --ink-soft: #d9d3c7;
+    --muted: #8a857e;
+    --accent: #e07a4f;
+    --accent-hover: #ea8c64;
+    --olive: #9bb5c9;
+    --border: rgba(245, 242, 235, 0.1);
+    --border-strong: rgba(245, 242, 235, 0.2);
+    --accent-subtle: rgba(224, 122, 79, 0.14);
+    --accent-ring: rgba(224, 122, 79, 0.36);
+    --olive-subtle: rgba(155, 181, 201, 0.2);
+    --selection-bg: #e07a4f;
+    --selection-fg: #0d0c0a;
+
+    color-scheme: dark;
   }
 }
 
+/* ===== Expose tokens to Tailwind utilities ===== */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-olive: var(--olive);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-ring: var(--accent-ring);
+  --color-olive-subtle: var(--olive-subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* ===== Base styles ===== */
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-fg);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Display / serif utility */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ultra-subtle grain on surfaces for warmth (optional, very faint) */
+.grain {
+  position: relative;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(0, 0, 0, 0.025) 1px,
+    transparent 1px
+  );
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+@media (prefers-color-scheme: dark) {
+  .grain::before {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    );
+    mix-blend-mode: screen;
+  }
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
