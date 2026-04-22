@@ -9,17 +9,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div className="theme-6-logo-blue-headings">
-      <style>{`
-        .theme-6-logo-blue-headings h1 {
-          color: var(--muted) !important;
-        }
-
-        .theme-6-logo-blue-headings h2,
-        .theme-6-logo-blue-headings h3 {
-          color: #194162 !important;
-        }
-      `}</style>
+    <div className="theme-v2-approved theme-6-logo-blue-headings">
       <Nav />
       <main className="flex-1">
         <Hero />
