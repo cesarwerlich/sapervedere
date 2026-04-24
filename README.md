@@ -32,7 +32,8 @@ This project runs on:
 
 ## Routes
 
-- `/` default production variant (currently theme-6 style)
+- `/` default production variant with the shortened copy structure
+- `/theme-2` preserved pre-copy-refresh production version
 - `/theme-3` neutral grayscale variant
 - `/theme-4` blue-headings-only variant
 - `/theme-5` conversion-focused variant (proof block + sticky CTA + stage split)
