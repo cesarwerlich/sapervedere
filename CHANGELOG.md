@@ -3,11 +3,13 @@
 ## [Unreleased]
 
 ### Added
+- `/theme-2` route preserving the previous long-form homepage copy for future reference.
 - `ARCHITECTURE.md` with project structure, design-system decisions, and deployment notes.
 - `CHANGELOG.md` for durable project memory across chat sessions.
 
 ### Changed
 - Documented agent workflow in `AGENTS.md` to read `README.md`, `ARCHITECTURE.md`, and `CHANGELOG.md` at task start.
+- Rewrote the default homepage with shorter copy, a simplified services section, and a trimmed operating-context structure.
 
 ## [v2 - 2026-04-22]
 

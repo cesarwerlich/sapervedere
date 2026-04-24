@@ -8,6 +8,7 @@ Primary route:
 - `/` (default production experience)
 
 Variant routes (for comparison/testing):
+- `/theme-2`
 - `/theme-3`
 - `/theme-4`
 - `/theme-5`
@@ -19,7 +20,9 @@ Variant routes (for comparison/testing):
 - `app/layout.tsx`
   - Global metadata, fonts, and viewport settings.
 - `app/page.tsx`
-  - Default homepage composition and theme wrapper classes.
+  - Default concise homepage composition and theme wrapper classes.
+- `app/theme-2/page.tsx`
+  - Preserved long-form homepage variant from the pre-copy-refresh production version.
 - `app/components/*`
   - Reusable sections (`Nav`, `Hero`, `Services`, `Companies`, `About`, `FitCheck`, `Contact`, `Footer`, `Section`).
 - `app/globals.css`
