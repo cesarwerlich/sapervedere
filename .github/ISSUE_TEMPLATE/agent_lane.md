@@ -1,7 +1,7 @@
 ---
 name: Agent lane
 about: Scoped implementation lane for a worktree-based agent
-title: "[Lane] "
+title: '[Lane] '
 labels: enhancement
 ---
 
@@ -9,15 +9,15 @@ labels: enhancement
 
 ## Scope
 
-- 
+-
 
 ## Acceptance criteria
 
-- 
+-
 
 ## Out of scope
 
-- 
+-
 
 ## Suggested branch and worktree
 

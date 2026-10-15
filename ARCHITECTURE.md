@@ -5,9 +5,11 @@
 Saper Vedere is a Next.js App Router marketing site with a single canonical page and multiple theme-variant routes used for design and copy testing.
 
 Primary route:
+
 - `/` (default production experience)
 
 Variant routes (for comparison/testing):
+
 - `/theme-2`
 - `/theme-3`
 - `/theme-4`

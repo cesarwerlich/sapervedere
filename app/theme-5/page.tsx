@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import Hero from "../components/Hero";
-import Nav from "../components/Nav";
-import Services from "../components/Services";
-import Companies from "../components/Companies";
-import About from "../components/About";
-import FitCheck from "../components/FitCheck";
-import Footer from "../components/Footer";
-import Section from "../components/Section";
+import type { Metadata } from 'next';
+import Hero from '../components/Hero';
+import Nav from '../components/Nav';
+import Services from '../components/Services';
+import Companies from '../components/Companies';
+import About from '../components/About';
+import FitCheck from '../components/FitCheck';
+import Footer from '../components/Footer';
+import Section from '../components/Section';
+
 
 export const metadata: Metadata = {
   robots: {
@@ -16,38 +17,45 @@ export const metadata: Metadata = {
 };
 
 const CAL_EMBED =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0bthjlEmSeiF4N8Hu9B9knW7OvOqCVfvDyzNERqgHTz295Fx5mnYOnly9kH9ckBteoAlvT0Wtj?gv=true";
-const CAL_SHORT = "https://calendar.app.google/UrbapWUStc9WCJcF7";
+  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0bthjlEmSeiF4N8Hu9B9knW7OvOqCVfvDyzNERqgHTz295Fx5mnYOnly9kH9ckBteoAlvT0Wtj?gv=true';
+const CAL_SHORT = 'https://calendar.app.google/UrbapWUStc9WCJcF7';
 
 const outcomes = [
   {
-    metric: "35%",
-    label: "Pipeline Growth",
-    detail: "Structured outbound and handoff systems that increase qualified opportunities.",
+    metric: '35%',
+    label: 'Pipeline Growth',
+    detail:
+      'Structured outbound and handoff systems that increase qualified opportunities.',
   },
   {
-    metric: "6-8w",
-    label: "Execution Speed-Up",
-    detail: "Operating cadence and owner clarity to move initiatives from idea to shipped.",
+    metric: '6-8w',
+    label: 'Execution Speed-Up',
+    detail:
+      'Operating cadence and owner clarity to move initiatives from idea to shipped.',
   },
   {
-    metric: "90+",
-    label: "Team Scale Experience",
-    detail: "Hands-on operating leadership from scrappy startups to larger restructures.",
+    metric: '90+',
+    label: 'Team Scale Experience',
+    detail:
+      'Hands-on operating leadership from scrappy startups to larger restructures.',
   },
 ];
 
 const stages = [
   {
-    title: "Pre-seed / Seed",
-    fit: "You are finding PMF and building early GTM muscle.",
-    focus: ["Founder leverage", "Sales motion basics", "Fundraising readiness"],
+    title: 'Pre-seed / Seed',
+    fit: 'You are finding PMF and building early GTM muscle.',
+    focus: ['Founder leverage', 'Sales motion basics', 'Fundraising readiness'],
     href: `${CAL_SHORT}?utm_source=theme5&utm_campaign=stage_seed`,
   },
   {
-    title: "Series A+",
-    fit: "You are scaling delivery, team structure, and forecasting quality.",
-    focus: ["Org operating system", "Revenue ops depth", "Cross-functional accountability"],
+    title: 'Series A+',
+    fit: 'You are scaling delivery, team structure, and forecasting quality.',
+    focus: [
+      'Org operating system',
+      'Revenue ops depth',
+      'Cross-functional accountability',
+    ],
     href: `${CAL_SHORT}?utm_source=theme5&utm_campaign=stage_series_a`,
   },
 ];
@@ -69,8 +77,8 @@ export default function Theme5Page() {
                 Results before aesthetics.
               </h2>
               <p className="mt-5 text-lg text-[color:var(--ink-soft)]">
-                A few examples of the kind of leverage this operating partnership is built to
-                create.
+                A few examples of the kind of leverage this operating
+                partnership is built to create.
               </p>
             </div>
 
@@ -110,7 +118,8 @@ export default function Theme5Page() {
                 Pick your stage first.
               </h2>
               <p className="mt-5 text-lg text-[color:var(--ink-soft)]">
-                Choose the track that matches your company stage and book directly from there.
+                Choose the track that matches your company stage and book
+                directly from there.
               </p>
             </div>
 
@@ -123,10 +132,15 @@ export default function Theme5Page() {
                   <h3 className="font-display text-2xl sm:text-3xl tracking-tight text-[color:var(--ink)]">
                     {stage.title}
                   </h3>
-                  <p className="mt-3 text-[color:var(--ink-soft)]">{stage.fit}</p>
+                  <p className="mt-3 text-[color:var(--ink-soft)]">
+                    {stage.fit}
+                  </p>
                   <ul className="mt-4 space-y-2">
                     {stage.focus.map((point) => (
-                      <li key={point} className="flex items-start gap-2 text-sm text-[color:var(--ink-soft)]">
+                      <li
+                        key={point}
+                        className="flex items-start gap-2 text-sm text-[color:var(--ink-soft)]"
+                      >
                         <span
                           aria-hidden
                           className="mt-2 inline-block h-1.5 w-1.5 rounded-full bg-[color:var(--accent)] flex-shrink-0"

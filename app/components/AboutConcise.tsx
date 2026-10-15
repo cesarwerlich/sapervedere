@@ -1,6 +1,11 @@
-import Section from "./Section";
+import Section from './Section';
 
-const tags = ["YC W22", "IESE EMBA", "MSc Production Engineering", "EN · PT · ES · DE · IT"];
+const tags = [
+  'YC W22',
+  'IESE EMBA',
+  'MSc Production Engineering',
+  'EN · PT · ES · DE · IT',
+];
 
 export default function AboutConcise() {
   return (
@@ -18,11 +23,11 @@ export default function AboutConcise() {
 
           <div className="md:col-span-8">
             <p className="text-lg leading-relaxed text-[color:var(--ink-soft)]">
-              I&apos;m Cesar. My background starts in engineering and operational
-              discipline, then moves into startups where I&apos;ve worked as a
-              founder, operator, and company builder across GTM, finance, and
-              execution. Most recently I was Co-founder &amp; COO at{" "}
-              <span className="text-[color:var(--ink)]">Lightmeter</span> (YC
+              I&apos;m Cesar. My background starts in engineering and
+              operational discipline, then moves into startups where I&apos;ve
+              worked as a founder, operator, and company builder across GTM,
+              finance, and execution. Most recently I was Co-founder &amp; COO
+              at <span className="text-[color:var(--ink)]">Lightmeter</span> (YC
               W22). Today I work with founders who need stronger systems,
               cleaner execution, and more leverage at the operating layer.
             </p>

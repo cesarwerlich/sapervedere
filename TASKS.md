@@ -5,8 +5,8 @@ work, record handoff on the Issue/PR and leave this file unused. Never mirror
 live state between both surfaces.
 
 Live handoff file between work sessions — human or AI, single or concurrent.
-This is the one place that answers: *what is being worked on right now, by whom,
-and what is the next action?* Keep it short and current. It is rewritten in
+This is the one place that answers: _what is being worked on right now, by whom,
+and what is the next action?_ Keep it short and current. It is rewritten in
 place, not appended forever.
 
 - Durable architecture/context → `CONTEXT.md`
@@ -18,9 +18,9 @@ place, not appended forever.
 ## How To Use
 
 - **At session start:** read this file. If you begin work, add or update your row
-  in *Active Work* to claim it (your branch or worktree is the lock key).
-- **Before you stop:** update the *Current Handoff* block with the next action and
-  any blockers, and move finished items into *Recently Done*.
+  in _Active Work_ to claim it (your branch or worktree is the lock key).
+- **Before you stop:** update the _Current Handoff_ block with the next action and
+  any blockers, and move finished items into _Recently Done_.
 - **Keep it lean.** When a fact becomes durable, promote it (see links above) and
   remove it from here. Do not let this file accumulate history.
 
@@ -30,7 +30,8 @@ One row per in-flight task. Concurrent sessions coordinate here: claim by branch
 or worktree, never edit another session's active task.
 
 | Task | Owner / session | Branch / worktree | Updated | Next step | Blockers |
-| --- | --- | --- | --- | --- | --- |
+| ---- | --------------- | ----------------- | ------- | --------- | -------- |
+
 <!-- | Example feature | claude-cli | feat/login | 2025-01-01 | wire validation | none | -->
 
 ## Current Handoff
