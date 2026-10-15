@@ -11,7 +11,6 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Section from '../components/Section';
 
-
 export const metadata: Metadata = {
   robots: {
     index: false,

@@ -8,7 +8,6 @@ import FitCheck from '../components/FitCheck';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
-
 export const metadata: Metadata = {
   robots: {
     index: false,
