@@ -1,11 +1,11 @@
-import Nav from "./components/Nav";
-import HeroConcise from "./components/HeroConcise";
-import ServicesConcise from "./components/ServicesConcise";
-import CompaniesConcise from "./components/CompaniesConcise";
-import AboutConcise from "./components/AboutConcise";
-import FitCheckConcise from "./components/FitCheckConcise";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Nav from './components/Nav';
+import HeroConcise from './components/HeroConcise';
+import ServicesConcise from './components/ServicesConcise';
+import CompaniesConcise from './components/CompaniesConcise';
+import AboutConcise from './components/AboutConcise';
+import FitCheckConcise from './components/FitCheckConcise';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (

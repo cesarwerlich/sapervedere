@@ -1,12 +1,22 @@
-"use client";
+'use client';
 
-import posthog from "posthog-js";
+import posthog from 'posthog-js';
 
 type EventProps = Record<string, string | number | boolean | null | undefined>;
 
 /** Central helper so we never pass a raw string to posthog.capture. */
 export function track(event: string, props: EventProps = {}) {
-  if (typeof window === "undefined") return;
+  if (typeof window === 'undefined') return;
+  if (!posthog || !posthog.__loaded || typeof posthog.capture !== 'function')
+    return;
+  if (
+    typeof posthog.has_opted_out_capturing === 'function' &&
+    posthog.has_opted_out_capturing()
+  )
+    return;
+  if (typeof posthog.is_capturing === 'function' && !posthog.is_capturing())
+    return;
+
   try {
     posthog.capture(event, props);
   } catch {
@@ -16,8 +26,8 @@ export function track(event: string, props: EventProps = {}) {
 
 /** Named events — single source of truth for analytics vocabulary. */
 export const Events = {
-  ctaClick: "cta_click",
-  sectionView: "section_view",
-  outboundClick: "outbound_click",
-  scrollDepth: "scroll_depth",
+  ctaClick: 'cta_click',
+  sectionView: 'section_view',
+  outboundClick: 'outbound_click',
+  scrollDepth: 'scroll_depth',
 } as const;

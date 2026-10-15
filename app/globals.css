@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* ===== Design tokens — light mode (default) ===== */
 :root {
@@ -110,8 +110,12 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-family:
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-feature-settings: 'ss01', 'cv11';
   line-height: 1.6;
 }
 
@@ -142,7 +146,9 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 700ms ease-out, transform 700ms ease-out;
+  transition:
+    opacity 700ms ease-out,
+    transform 700ms ease-out;
 }
 .reveal.is-visible {
   opacity: 1;
@@ -154,14 +160,11 @@ body {
   position: relative;
 }
 .grain::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(
-    rgba(0, 0, 0, 0.025) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px);
   background-size: 3px 3px;
   mix-blend-mode: multiply;
   opacity: 0.5;

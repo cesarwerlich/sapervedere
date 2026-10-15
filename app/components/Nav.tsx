@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { track, Events } from "../lib/analytics";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { track, Events } from '../lib/analytics';
 
 const links = [
-  { href: "#services", label: "Work with me" },
-  { href: "#companies", label: "Experience" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: '#services', label: 'Work with me' },
+  { href: '#companies', label: 'Experience' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Nav() {
@@ -19,26 +19,26 @@ export default function Nav() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   const trackNavClick = (label: string) =>
-    track(Events.ctaClick, { location: "nav", label });
+    track(Events.ctaClick, { location: 'nav', label });
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md bg-[color:var(--bg)]/80 border-b border-[color:var(--border)]"
-          : "bg-transparent"
+          ? 'backdrop-blur-md bg-[color:var(--bg)]/80 border-b border-[color:var(--border)]'
+          : 'bg-transparent'
       }`}
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-20 flex items-center justify-between">
         <Link
           href="#top"
           className="flex items-center group"
-          onClick={() => trackNavClick("logo")}
+          onClick={() => trackNavClick('logo')}
           aria-label="Saper Vedere — home"
         >
           <Image
@@ -65,7 +65,7 @@ export default function Nav() {
           ))}
           <Link
             href="#contact"
-            onClick={() => trackNavClick("Book a call (nav)")}
+            onClick={() => trackNavClick('Book a call (nav)')}
             className="ml-3 inline-flex items-center rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] px-4 py-2 text-sm font-medium hover:bg-[color:var(--accent-hover)] transition-colors"
           >
             Book a call
@@ -80,7 +80,13 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Toggle menu</span>
-          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden
+          >
             {open ? (
               <path
                 d="M5 5l10 10M15 5L5 15"
@@ -119,7 +125,7 @@ export default function Nav() {
             <Link
               href="#contact"
               onClick={() => {
-                trackNavClick("Book a call (mobile)");
+                trackNavClick('Book a call (mobile)');
                 setOpen(false);
               }}
               className="mt-3 inline-flex items-center justify-center rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] px-5 py-3 text-sm font-medium hover:bg-[color:var(--accent-hover)] transition-colors"

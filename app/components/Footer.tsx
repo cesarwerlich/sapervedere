@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { track, Events } from "../lib/analytics";
+import Image from 'next/image';
+import Link from 'next/link';
+import { track, Events } from '../lib/analytics';
 
 export default function Footer() {
   const onOutbound = (label: string, href: string) =>
-    track(Events.outboundClick, { location: "footer", label, href });
+    track(Events.outboundClick, { location: 'footer', label, href });
 
   return (
     <footer className="border-t border-[color:var(--border)] bg-[color:var(--surface)] mt-8">
@@ -52,18 +52,14 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
-                onOutbound("LinkedIn", "https://www.linkedin.com/in/cesarwerlich")
+                onOutbound(
+                  'LinkedIn',
+                  'https://www.linkedin.com/in/cesarwerlich'
+                )
               }
               className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
             >
               LinkedIn
-            </a>
-            <a
-              href="mailto:cesar@sapervedere.com.br"
-              onClick={() => onOutbound("Email", "cesar@sapervedere.com.br")}
-              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
-            >
-              Email
             </a>
           </nav>
         </div>

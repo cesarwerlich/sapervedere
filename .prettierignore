@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+build
+dist
+.worktrees
+package-lock.json
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+branding
+public

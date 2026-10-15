@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import { track, Events } from "../lib/analytics";
+import { useEffect, useRef } from 'react';
+import { track, Events } from '../lib/analytics';
 
 type Props = {
   id: string;
@@ -17,7 +17,12 @@ type Props = {
  *  - IntersectionObserver that fires a `section_view` event (once per session)
  *  - Reveal-on-scroll animation (CSS-driven, respects prefers-reduced-motion)
  */
-export default function Section({ id, label, className = "", children }: Props) {
+export default function Section({
+  id,
+  label,
+  className = '',
+  children,
+}: Props) {
   const ref = useRef<HTMLElement | null>(null);
   const seenRef = useRef(false);
 
@@ -29,7 +34,7 @@ export default function Section({ id, label, className = "", children }: Props) 
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            entry.target.classList.add('is-visible');
             if (!seenRef.current) {
               seenRef.current = true;
               track(Events.sectionView, { section: label });
@@ -37,7 +42,7 @@ export default function Section({ id, label, className = "", children }: Props) 
           }
         }
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
     );
     io.observe(el);
     return () => io.disconnect();

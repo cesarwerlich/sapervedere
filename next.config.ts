@@ -1,20 +1,20 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
   async rewrites() {
     return [
       {
-        source: "/ingest/static/:path*",
-        destination: "https://us-assets.i.posthog.com/static/:path*",
+        source: '/ingest/static/:path*',
+        destination: 'https://us-assets.i.posthog.com/static/:path*',
       },
       {
-        source: "/ingest/array/:path*",
-        destination: "https://us-assets.i.posthog.com/array/:path*",
+        source: '/ingest/array/:path*',
+        destination: 'https://us-assets.i.posthog.com/array/:path*',
       },
       {
-        source: "/ingest/:path*",
-        destination: "https://us.i.posthog.com/:path*",
+        source: '/ingest/:path*',
+        destination: 'https://us.i.posthog.com/:path*',
       },
     ];
   },

@@ -1,12 +1,12 @@
-import Section from "./Section";
+import Section from './Section';
 
 const tags = [
-  "IESE EMBA",
-  "Y Combinator W22",
-  "MSc Production Engineering",
-  "Lean Manufacturing certified",
-  "Scrum Product Owner",
-  "EN · PT · ES · DE · IT",
+  'IESE EMBA',
+  'Y Combinator W22',
+  'MSc Production Engineering',
+  'Lean Manufacturing certified',
+  'Scrum Product Owner',
+  'EN · PT · ES · DE · IT',
 ];
 
 export default function About() {
@@ -46,14 +46,14 @@ export default function About() {
               I&rsquo;ve also learned what it takes to build systems that let
               the founder focus on vision instead of firefighting. That&rsquo;s
               the work I care about &mdash; helping founders install the
-              operating system their company needs to scale, then get out of
-              the way.
+              operating system their company needs to scale, then get out of the
+              way.
             </p>
             <p>
               I&rsquo;m based between Brazil and Europe, work across five
               languages, and have operated in three continents. Right now
-              I&rsquo;m selectively taking on new engagements after a
-              four-month sabbatical circumnavigating the globe.
+              I&rsquo;m selectively taking on new engagements after a four-month
+              sabbatical circumnavigating the globe.
             </p>
 
             <div className="pt-4 flex flex-wrap gap-2">
