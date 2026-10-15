@@ -11,8 +11,17 @@ At the start of each new task/session, read these files first:
 1. `README.md`
 2. `ARCHITECTURE.md`
 3. `CHANGELOG.md`
+4. `CONTEXT.md`
 
 If there is a conflict:
 - User instruction in current chat wins.
 - Then this `AGENTS.md`.
-- Then `README.md` / `ARCHITECTURE.md` / `CHANGELOG.md`.
+- Then `README.md` / `ARCHITECTURE.md` / `CHANGELOG.md` / `CONTEXT.md`.
+
+## Multi-Agent Coordination Protocol
+
+GitHub-backed work uses one Issue → one registered worktree → one branch → one PR → CTO review.
+- Start or resume a lane with `./scripts/worktree-bootstrap.sh <issue-number> <slug>`.
+- Always verify all changes with `./scripts/check.sh` before finishing work.
+- Complete a lane with `./scripts/worktree-finish.sh`.
+- Agents must never merge their own PRs; all merges require independent CTO review.
