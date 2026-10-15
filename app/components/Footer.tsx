@@ -58,13 +58,6 @@ export default function Footer() {
             >
               LinkedIn
             </a>
-            <a
-              href="mailto:cesar@sapervedere.com.br"
-              onClick={() => onOutbound("Email", "cesar@sapervedere.com.br")}
-              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
-            >
-              Email
-            </a>
           </nav>
         </div>
 

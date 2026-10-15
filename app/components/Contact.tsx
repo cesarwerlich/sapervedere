@@ -6,9 +6,7 @@ import { track, Events } from "../lib/analytics";
 const CAL_EMBED =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0bthjlEmSeiF4N8Hu9B9knW7OvOqCVfvDyzNERqgHTz295Fx5mnYOnly9kH9ckBteoAlvT0Wtj?gv=true";
 const CAL_SHORT = "https://calendar.app.google/UrbapWUStc9WCJcF7";
-const EMAIL = "cesar@sapervedere.com.br";
 const LINKEDIN = "https://www.linkedin.com/in/cesarwerlich";
-
 export default function Contact() {
   const onOutbound = (label: string, href: string) =>
     track(Events.outboundClick, { location: "contact", label, href });
@@ -57,50 +55,6 @@ export default function Contact() {
                     </div>
                     <div className="text-xs text-[color:var(--muted)]">
                       30 minutes · video call
-                    </div>
-                  </div>
-                </div>
-                <svg
-                  className="text-[color:var(--muted)] group-hover:text-[color:var(--olive)] transition-colors"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M6 4l4 4-4 4"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-
-              <a
-                href={`mailto:${EMAIL}`}
-                onClick={() => onOutbound("Email", EMAIL)}
-                className="group flex items-center justify-between gap-3 rounded-[var(--radius-md)] border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 transition-colors hover:border-[color:var(--border-strong)]"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--accent)]/10 text-[color:var(--accent)]">
-                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden>
-                      <path
-                        d="M3 6l7 5 7-5M3 6v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6M3 6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <div className="text-sm font-medium text-[color:var(--ink)]">
-                      Email me directly
-                    </div>
-                    <div className="text-xs text-[color:var(--muted)]">
-                      {EMAIL}
                     </div>
                   </div>
                 </div>
