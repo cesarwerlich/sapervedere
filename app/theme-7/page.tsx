@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
@@ -9,6 +10,13 @@ import FitCheck from "../components/FitCheck";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const theme7Vars: CSSProperties = {
   ["--bg" as string]: "#0b1117",

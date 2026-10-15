@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
@@ -7,6 +8,13 @@ import About from "../components/About";
 import FitCheck from "../components/FitCheck";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const theme3Vars: CSSProperties = {
   ["--bg" as string]: "#F7F8FA",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Nav from "../components/Nav";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
@@ -6,6 +7,13 @@ import About from "../components/About";
 import FitCheck from "../components/FitCheck";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function Theme6Page() {
   return (

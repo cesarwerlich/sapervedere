@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Services from "../components/Services";
@@ -6,6 +7,13 @@ import About from "../components/About";
 import FitCheck from "../components/FitCheck";
 import Footer from "../components/Footer";
 import Section from "../components/Section";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 const CAL_EMBED =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0bthjlEmSeiF4N8Hu9B9knW7OvOqCVfvDyzNERqgHTz295Fx5mnYOnly9kH9ckBteoAlvT0Wtj?gv=true";
