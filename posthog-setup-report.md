@@ -7,10 +7,10 @@ The wizard has completed a deep integration of PostHog analytics into this Next.
 - **`.env.local`** — Configured `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN` and `NEXT_PUBLIC_POSTHOG_HOST` environment variables.
 - **`app/page.tsx`** — Converted to a client component and added PostHog `capture()` calls on the two main CTA clicks.
 
-| Event | Description | File |
-|-------|-------------|------|
-| `deploy_now_clicked` | User clicked the "Deploy Now" button linking to Vercel deployment | `app/page.tsx` |
-| `documentation_clicked` | User clicked the "Documentation" link to Next.js docs | `app/page.tsx` |
+| Event                   | Description                                                       | File           |
+| ----------------------- | ----------------------------------------------------------------- | -------------- |
+| `deploy_now_clicked`    | User clicked the "Deploy Now" button linking to Vercel deployment | `app/page.tsx` |
+| `documentation_clicked` | User clicked the "Documentation" link to Next.js docs             | `app/page.tsx` |
 
 ## Next steps
 

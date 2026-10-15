@@ -12,11 +12,11 @@ Document how vulnerabilities should be reported for this project.
 
 ## Data Classification
 
-| Data Type | Present? | Handling Notes |
-| --- | --- | --- |
-| Public | <!-- yes/no --> | <!-- handling notes --> |
-| Internal | <!-- yes/no --> | <!-- handling notes --> |
-| Personal data | <!-- yes/no --> | <!-- handling notes --> |
+| Data Type              | Present?        | Handling Notes          |
+| ---------------------- | --------------- | ----------------------- |
+| Public                 | <!-- yes/no --> | <!-- handling notes --> |
+| Internal               | <!-- yes/no --> | <!-- handling notes --> |
+| Personal data          | <!-- yes/no --> | <!-- handling notes --> |
 | Payment/regulated data | <!-- yes/no --> | <!-- handling notes --> |
 
 ## Commit Identity

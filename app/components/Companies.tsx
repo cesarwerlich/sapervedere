@@ -1,4 +1,4 @@
-import Section from "./Section";
+import Section from './Section';
 
 type Context = {
   title: string;
@@ -13,48 +13,52 @@ type Stage = {
 
 const contexts: Context[] = [
   {
-    title: "Venture-backed B2B SaaS",
+    title: 'Venture-backed B2B SaaS',
     detail:
-      "Built operating cadence, GTM systems, and customer experience infrastructure from early traction to growth.",
+      'Built operating cadence, GTM systems, and customer experience infrastructure from early traction to growth.',
   },
   {
-    title: "Founder-led startups",
+    title: 'Founder-led startups',
     detail:
-      "From 2-person teams to larger organizations, with direct ownership across operations, finance, and execution.",
+      'From 2-person teams to larger organizations, with direct ownership across operations, finance, and execution.',
   },
   {
-    title: "Complex restructuring moments",
+    title: 'Complex restructuring moments',
     detail:
-      "Led post-M&A transitions and scale-up realignment for cross-functional teams with high execution pressure.",
+      'Led post-M&A transitions and scale-up realignment for cross-functional teams with high execution pressure.',
   },
 ];
 
 const stages: Stage[] = [
   {
-    period: "2007 — 2013",
-    title: "Operational foundations",
-    focus: "Industrial operations and process discipline",
+    period: '2007 — 2013',
+    title: 'Operational foundations',
+    focus: 'Industrial operations and process discipline',
   },
   {
-    period: "2013 — 2019",
-    title: "Operator-builder phase",
-    focus: "GTM, finance, team leadership, and founder execution",
+    period: '2013 — 2019',
+    title: 'Operator-builder phase',
+    focus: 'GTM, finance, team leadership, and founder execution',
   },
   {
-    period: "2013 — 2016",
-    title: "Scale and restructure",
-    focus: "Cross-functional execution in high-growth and transition contexts",
+    period: '2013 — 2016',
+    title: 'Scale and restructure',
+    focus: 'Cross-functional execution in high-growth and transition contexts',
   },
   {
-    period: "2019 — 2026",
-    title: "Founder partner",
-    focus: "Embedded fractional COO and operating partner work",
+    period: '2019 — 2026',
+    title: 'Founder partner',
+    focus: 'Embedded fractional COO and operating partner work',
   },
 ];
 
 export default function Companies() {
   return (
-    <Section id="companies" label="Experience" className="py-24 sm:py-32 bg-[color:var(--surface)]">
+    <Section
+      id="companies"
+      label="Experience"
+      className="py-24 sm:py-32 bg-[color:var(--surface)]"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-3xl">
           <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-[color:var(--muted)]">
@@ -91,13 +95,18 @@ export default function Companies() {
           </h3>
           <ol className="mt-5 space-y-3">
             {stages.map((stage) => (
-              <li key={`${stage.period}-${stage.title}`} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+              <li
+                key={`${stage.period}-${stage.title}`}
+                className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4"
+              >
                 <span className="text-xs sm:text-sm uppercase tracking-wider text-[color:var(--muted)] tabular-nums sm:w-36">
                   {stage.period}
                 </span>
                 <p className="text-[color:var(--ink-soft)]">
-                  <span className="font-medium text-[color:var(--ink)]">{stage.title}</span>
-                  {" · "}
+                  <span className="font-medium text-[color:var(--ink)]">
+                    {stage.title}
+                  </span>
+                  {' · '}
                   {stage.focus}
                 </p>
               </li>

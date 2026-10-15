@@ -2,9 +2,9 @@
 
 ## Environments
 
-| Environment | URL/Target | Purpose | Owner |
-| --- | --- | --- | --- |
-| Local | localhost | Development | <!-- fill in --> |
+| Environment | URL/Target | Purpose     | Owner            |
+| ----------- | ---------- | ----------- | ---------------- |
+| Local       | localhost  | Development | <!-- fill in --> |
 
 ## Deployment
 
@@ -16,12 +16,12 @@ Document the safest known rollback path. Every production-facing project should 
 
 ## Observability
 
-| Signal | Location | Notes |
-| --- | --- | --- |
-| Logs | <!-- fill in --> | <!-- fill in --> |
+| Signal  | Location         | Notes            |
+| ------- | ---------------- | ---------------- |
+| Logs    | <!-- fill in --> | <!-- fill in --> |
 | Metrics | <!-- fill in --> | <!-- fill in --> |
-| Errors | <!-- fill in --> | <!-- fill in --> |
-| Traces | <!-- fill in --> | <!-- fill in --> |
+| Errors  | <!-- fill in --> | <!-- fill in --> |
+| Traces  | <!-- fill in --> | <!-- fill in --> |
 
 ## Backups and Recovery
 

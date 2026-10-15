@@ -1,7 +1,7 @@
 ---
 name: Task
 about: Track implementation or maintenance work
-title: "task: "
+title: 'task: '
 labels: task
 ---
 

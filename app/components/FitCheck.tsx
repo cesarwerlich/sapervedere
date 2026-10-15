@@ -1,24 +1,28 @@
-import Section from "./Section";
+import Section from './Section';
 
 const goodFit = [
-  "B2B SaaS or marketplace, pre-seed to Series A",
-  "Between 3 and 30 people, with at least some PMF signal",
-  "Funded (or close to it), with founders ready to delegate ops",
-  "Looking for an embedded operator, not a consultant with slides",
-  "Willing to implement systems, not just talk about them",
+  'B2B SaaS or marketplace, pre-seed to Series A',
+  'Between 3 and 30 people, with at least some PMF signal',
+  'Funded (or close to it), with founders ready to delegate ops',
+  'Looking for an embedded operator, not a consultant with slides',
+  'Willing to implement systems, not just talk about them',
 ];
 
 const notFit = [
-  "Pre-product, no founder alignment on direction yet",
-  "Consumer-only, deep hardware, or regulated health/pharma",
-  "Looking for cheap freelance work or task execution",
-  "Expecting advice without willingness to change how things run",
-  "Series B+ with an existing COO already in seat",
+  'Pre-product, no founder alignment on direction yet',
+  'Consumer-only, deep hardware, or regulated health/pharma',
+  'Looking for cheap freelance work or task execution',
+  'Expecting advice without willingness to change how things run',
+  'Series B+ with an existing COO already in seat',
 ];
 
 export default function FitCheck() {
   return (
-    <Section id="fit" label="Fit check" className="py-24 sm:py-32 bg-[color:var(--surface)]">
+    <Section
+      id="fit"
+      label="Fit check"
+      className="py-24 sm:py-32 bg-[color:var(--surface)]"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-[color:var(--muted)]">
@@ -39,7 +43,13 @@ export default function FitCheck() {
           <div className="rounded-[var(--radius-lg)] border border-[color:var(--border)] bg-[color:var(--bg)] p-7 sm:p-8">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-[color:var(--olive)]/15 text-[color:var(--olive)]">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden
+                >
                   <path
                     d="M3.5 8.5l3 3 6-7"
                     stroke="currentColor"
@@ -73,7 +83,13 @@ export default function FitCheck() {
           <div className="rounded-[var(--radius-lg)] border border-[color:var(--border)] bg-[color:var(--bg)] p-7 sm:p-8">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-[color:var(--muted)]/15 text-[color:var(--muted)]">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden
+                >
                   <path
                     d="M4 4l8 8M12 4l-8 8"
                     stroke="currentColor"
@@ -104,8 +120,8 @@ export default function FitCheck() {
         </div>
 
         <p className="mt-8 text-sm text-[color:var(--muted)] max-w-2xl">
-          Not sure if you qualify? Send a short note anyway &mdash; if
-          I can&rsquo;t help I can usually point you to someone who can.
+          Not sure if you qualify? Send a short note anyway &mdash; if I
+          can&rsquo;t help I can usually point you to someone who can.
         </p>
       </div>
     </Section>

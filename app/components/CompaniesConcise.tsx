@@ -1,20 +1,20 @@
-import Section from "./Section";
+import Section from './Section';
 
 const contexts = [
   {
-    title: "Venture-backed B2B SaaS",
+    title: 'Venture-backed B2B SaaS',
     detail:
-      "From early traction to growth, with hands-on work across GTM, ops, and the systems founders need before scale breaks them.",
+      'From early traction to growth, with hands-on work across GTM, ops, and the systems founders need before scale breaks them.',
   },
   {
-    title: "Founder-led startups",
+    title: 'Founder-led startups',
     detail:
-      "Inside companies where the founder is still too central, helping turn instinct and urgency into operating rhythm and delegation.",
+      'Inside companies where the founder is still too central, helping turn instinct and urgency into operating rhythm and delegation.',
   },
   {
-    title: "Transition moments",
+    title: 'Transition moments',
     detail:
-      "Restructuring, cross-functional reset, and other moments when clarity, ownership, and pace matter more than theory.",
+      'Restructuring, cross-functional reset, and other moments when clarity, ownership, and pace matter more than theory.',
   },
 ];
 

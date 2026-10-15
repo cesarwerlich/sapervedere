@@ -60,9 +60,9 @@ npm run build            # Next.js production build
 
 ## External Systems
 
-| System | Purpose | Owner | Notes |
-| --- | --- | --- | --- |
-| Vercel | Hosting & Edge CDN | Cesar Werlich | Automated GitHub App deployments |
-| Google Calendar | Appointment scheduling | Cesar Werlich | Embedded iframe + direct booking link |
-| PostHog | Product analytics | Cesar Werlich | Ingest proxy via `/ingest/*` rewrites |
-| Google Analytics | Traffic analytics | Cesar Werlich | GA4 ID `G-QTT2N0E134` |
+| System           | Purpose                | Owner         | Notes                                 |
+| ---------------- | ---------------------- | ------------- | ------------------------------------- |
+| Vercel           | Hosting & Edge CDN     | Cesar Werlich | Automated GitHub App deployments      |
+| Google Calendar  | Appointment scheduling | Cesar Werlich | Embedded iframe + direct booking link |
+| PostHog          | Product analytics      | Cesar Werlich | Ingest proxy via `/ingest/*` rewrites |
+| Google Analytics | Traffic analytics      | Cesar Werlich | GA4 ID `G-QTT2N0E134`                 |
