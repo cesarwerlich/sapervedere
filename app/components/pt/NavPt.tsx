@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { track, Events } from '../../lib/analytics';
 
 const links = [
-  { href: '#services', label: 'Como ajudo' },
+  { href: '#servicos', label: 'Como ajudo' },
   { href: '#companies', label: 'Experiência' },
   { href: '#about', label: 'Sobre' },
   { href: '/contato', label: 'Contato' },

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { track, Events } from '../lib/analytics';
 
 const proof = [
-  { k: 'YC W22', v: 'Lightmeter' },
+  { k: '12+', v: 'years operating' },
   { k: '4', v: 'startups built' },
   { k: '90+', v: 'person team led' },
   { k: '3', v: 'continents' },
@@ -29,9 +29,8 @@ export default function Hero() {
 
         {/* Sub */}
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl leading-relaxed text-[color:var(--ink-soft)] max-w-2xl">
-          I help B2B SaaS founders, pre-seed to Series A, build the GTM systems,
-          operational infrastructure, and fundraising readiness to go from
-          scrappy to scalable. Ex-Co-founder &amp; COO at Lightmeter (YC W22).
+          I help B2B founders build the GTM systems, operational infrastructure,
+          and fundraising readiness to go from scrappy to scalable.
         </p>
 
         {/* CTAs */}

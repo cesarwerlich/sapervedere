@@ -60,7 +60,7 @@ const LP_CONFIGS: Record<string, LpConfig> = {
       },
     ],
     proofPoints: [
-      'Operador com vivência Y Combinator (Lightmeter W22) e histórico de vendas de alto ticket para clientes corporativos.',
+      'Mais de 12 anos de experiência em GTM B2B e vendas corporativas de alto ticket.',
       'Foco em métricas reais de negócio: reuniões qualificadas, pipeline gerado e redução do ciclo de vendas.',
       'Atuação prática de quem configura as ferramentas e constrói os processos junto com você.',
     ],
@@ -108,7 +108,7 @@ const LP_CONFIGS: Record<string, LpConfig> = {
       },
     ],
     proofPoints: [
-      'Ex-Co-founder & COO da Lightmeter (Y Combinator W22), mais de 12 anos liderando operações de tecnologia.',
+      'Mais de 12 anos operando e liderando empresas de tecnologia, finanças e escala B2B.',
       'Parceiro executivo direto dos founders na tomada de decisões difíceis e na resolução de conflitos operacionais.',
       'Libera a liderança para focar 100% em visão de produto, clientes e estratégia de longo prazo.',
     ],
@@ -156,7 +156,7 @@ const LP_CONFIGS: Record<string, LpConfig> = {
     ],
     proofPoints: [
       'Sprint intensiva com início imediato e entrega completa em 14 dias corridos.',
-      'Conduzido por Cesar Werlich (ex-COO Lightmeter YC W22), com vasta bagagem na análise de métricas de SaaS.',
+      'Conduzido por Cesar Werlich, operador com vasta bagagem na análise de unit economics e métricas de SaaS.',
       '100% voltado à geração de clareza prática e retorno sobre o investimento.',
     ],
     formTitle: 'Solicitar Diagnóstico Operacional',
@@ -258,18 +258,18 @@ export default async function LandingPage({
             <div className="mt-14 pt-8 border-t border-[color:var(--border)] grid grid-cols-2 sm:grid-cols-3 gap-6 text-left">
               <div>
                 <p className="text-2xl sm:text-3xl font-display font-semibold text-[color:var(--ink)]">
-                  YC W22
+                  12+ anos
                 </p>
                 <p className="text-xs sm:text-sm text-[color:var(--muted)] mt-0.5">
-                  Ex-Co-founder &amp; COO Lightmeter
+                  Liderando operações e escala B2B
                 </p>
               </div>
               <div>
                 <p className="text-2xl sm:text-3xl font-display font-semibold text-[color:var(--ink)]">
-                  12+ anos
+                  Mapeamento Real
                 </p>
                 <p className="text-xs sm:text-sm text-[color:var(--muted)] mt-0.5">
-                  Operando startups e GTM B2B
+                  Processos, finanças e GTM
                 </p>
               </div>
               <div className="col-span-2 sm:col-span-1">
@@ -300,7 +300,7 @@ export default async function LandingPage({
                   key={idx}
                   className="flex items-start gap-3.5 p-4 sm:p-5 rounded-[var(--radius-md)] border border-[color:var(--border)] bg-[color:var(--bg)]"
                 >
-                  <span className="flex-shrink-0 text-red-500 font-bold mt-0.5">
+                  <span className="flex-shrink-0 text-[color:var(--accent)] font-bold mt-0.5">
                     ✕
                   </span>
                   <p className="text-sm text-[color:var(--ink-soft)] leading-relaxed">
@@ -366,12 +366,12 @@ export default async function LandingPage({
                   Cesar Werlich · Saper Vedere
                 </h3>
                 <p className="mt-3 text-sm sm:text-base text-[color:var(--ink-soft)] leading-relaxed">
-                  Ex-Co-founder &amp; COO da <strong>Lightmeter</strong> (Y
-                  Combinator W22). Ao longo de mais de 12 anos, liderei
-                  operações, montei máquinas comerciais B2B e estruturei
-                  empresas para rodadas institucionais de investimento. Não
-                  trabalho como consultor tradicional: sou um operador parceiro
-                  que senta ao lado dos fundadores para resolver gargalos reais.
+                  Ao longo de mais de 12 anos, liderei operações, montei
+                  máquinas comerciais B2B, estruturei governança financeira e
+                  preparei empresas para rodadas de investimento e escala
+                  sustentável. Não trabalho como consultor tradicional de
+                  apresentações: sou um operador parceiro que senta ao lado dos
+                  fundadores para resolver gargalos reais.
                 </p>
 
                 <div className="mt-5 space-y-2">
@@ -404,6 +404,7 @@ export default async function LandingPage({
                 title={config.formTitle}
                 subtitle={config.formSubtitle}
                 ctaLabel={config.formCta}
+                selectionMode="checkboxes"
               />
             </div>
           </div>

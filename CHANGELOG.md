@@ -1,6 +1,17 @@
 # Changelog
 
-## [v3.1 - 2026-10-16]
+## [v3.2 - 2026-10-16]
+
+### Changed
+
+- **Brand Color Alignment**: Purged untracked utility colors (`emerald-500`, `emerald-600`, `red-500`) in favor of native design system tokens (`var(--olive)`, `var(--accent)`, `var(--surface)`).
+- **Footer Navigation Cleanup**: Removed redundant `Privacidade`, `Termos`, `LinkedIn`, and language switch links from the top footer `<nav>`, consolidating them exclusively into the bottom legal utility bar.
+- **PT Conversion Flow**: Removed direct calendar booking embed from the PT homepage, standardizing PT lead acquisition through the 2-step qualification funnel (`/contato` & `/lp/*` -> `/obrigado`), reserving direct calendar booking exclusively for `/en#contact`.
+- **Anchor Standardization**: Renamed primary service navigation anchor on PT pages from `#services` to `#servicos` (retaining hidden `#services` alias for backward compatibility).
+- **Bottleneck Multi-Checkbox Selection**: Upgraded `LeadForm` on landing pages (`/lp/*`) to support multi-select checkboxes for specific bottlenecks rather than single dropdown options, enabling granular problem discovery.
+- **Stage & Employee Broadening**: Fully translated and localized business stages into PT-BR with explicit employee headcount brackets (`1 a 5 pessoas`, `6 a 15 pessoas`, etc.), broadening appeal beyond venture-backed startups to all growth-stage B2B businesses.
+- **Bio & Resume De-cluttering**: Removed repetitive mentions of past employers and accelerator batches (`Lightmeter`, `YC W22`) across hero badges, about sections, and cards in favor of executive operating philosophy and LinkedIn profile links.
+- **Environment & Attribution Keys**: Safely mapped and transferred Meta Pixel (`NEXT_PUBLIC_META_PIXEL_ID`), Resend (`RESEND_API_KEY`), and Cloudflare credentials into `.env.local` and `.env.example`.
 
 ### Added
 

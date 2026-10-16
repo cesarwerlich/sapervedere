@@ -1,10 +1,11 @@
 import Section from '../Section';
 
 const tags = [
-  'YC W22',
+  'Operating Partner',
   'IESE EMBA',
   'MSc Engenharia de Produção',
   'Lean Manufacturing',
+  'Automação & IA',
   'PT · EN · ES · DE · IT',
 ];
 
@@ -31,19 +32,15 @@ export default function AboutPt() {
             </p>
             <p className="text-lg leading-relaxed text-[color:var(--ink-soft)]">
               Nos últimos 12 anos, levei essa disciplina para o ecossistema de
-              tecnologia — atuando como fundador, COO e CFO em empresas de
-              rápido crescimento, liderando a reestruturação operacional de
-              equipes de mais de 90 pessoas e, mais recentemente, como
-              Co-fundador e COO na{' '}
-              <span className="text-[color:var(--ink)] font-medium">
-                Lightmeter
-              </span>{' '}
-              (Y Combinator W22).
+              tecnologia e serviços B2B — atuando como fundador, COO e CFO em
+              operações de alto crescimento, liderando reestruturações de
+              equipes com mais de 90 pessoas, automação de processos críticos e
+              máquinas de aquisição outbound.
             </p>
             <p className="text-lg leading-relaxed text-[color:var(--ink-soft)]">
               Conheço de perto a rotina de acordar com dezenas de incêndios para
               apagar. Meu trabalho com fundadores consiste em instalar a
-              cadência e os sistemas que a empresa precisa para que o founder
+              cadência e os sistemas que a empresa precisa para que a liderança
               possa focar na visão de longo prazo em vez do microgerenciamento.
             </p>
 

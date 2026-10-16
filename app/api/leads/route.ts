@@ -49,13 +49,25 @@ export async function POST(request: Request) {
     val.trim().length > 0 &&
     val.trim().length <= maxLen;
 
+  // Normalize service field (supports string or array of checkboxes)
+  const normalizedService = Array.isArray(service)
+    ? service
+        .filter(
+          (s): s is string => typeof s === 'string' && s.trim().length > 0
+        )
+        .map((s) => s.trim())
+        .join(', ')
+    : typeof service === 'string'
+      ? service.trim()
+      : '';
+
   if (
     !isValidString(name) ||
     !isValidString(email, 254) ||
     !EMAIL_REGEX.test(email.trim()) ||
     !isValidString(company) ||
     !isValidString(stage) ||
-    !isValidString(service)
+    !isValidString(normalizedService, MAX_LONG_STRING_LENGTH)
   ) {
     return NextResponse.json(
       { error: 'Campos obrigatórios inválidos.' },
@@ -67,7 +79,7 @@ export async function POST(request: Request) {
   const sanitizedEmail = email.trim().toLowerCase();
   const sanitizedCompany = company.trim();
   const sanitizedStage = stage.trim();
-  const sanitizedService = service.trim();
+  const sanitizedService = normalizedService;
   const sanitizedWhatsapp =
     typeof whatsapp === 'string'
       ? whatsapp.trim().slice(0, MAX_SHORT_STRING_LENGTH)
