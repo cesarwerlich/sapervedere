@@ -64,6 +64,14 @@ export default function Nav() {
             </Link>
           ))}
           <Link
+            href="/"
+            onClick={() => trackNavClick('Language Switcher (PT)')}
+            aria-label="Versão em português"
+            className="ml-1 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-[color:var(--muted)] hover:text-[color:var(--ink)] border border-[color:var(--border)] rounded-md transition-colors"
+          >
+            PT
+          </Link>
+          <Link
             href="#contact"
             onClick={() => trackNavClick('Book a call (nav)')}
             className="ml-3 inline-flex items-center rounded-full bg-[color:var(--accent)] text-[color:var(--bg)] px-4 py-2 text-sm font-medium hover:bg-[color:var(--accent-hover)] transition-colors"
@@ -122,6 +130,19 @@ export default function Nav() {
                 {l.label}
               </Link>
             ))}
+            <Link
+              href="/"
+              onClick={() => {
+                trackNavClick('Language Switcher (PT mobile)');
+                setOpen(false);
+              }}
+              className="py-3 text-base text-[color:var(--ink)] border-b border-[color:var(--border)] flex items-center justify-between"
+            >
+              <span>Português</span>
+              <span className="text-xs uppercase font-semibold text-[color:var(--muted)] border border-[color:var(--border)] px-2 py-0.5 rounded">
+                PT
+              </span>
+            </Link>
             <Link
               href="#contact"
               onClick={() => {

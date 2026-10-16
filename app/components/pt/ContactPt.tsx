@@ -1,0 +1,213 @@
+'use client';
+
+import Link from 'next/link';
+import Section from '../Section';
+import { track, Events } from '../../lib/analytics';
+
+const CAL_EMBED =
+  'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0bthjlEmSeiF4N8Hu9B9knW7OvOqCVfvDyzNERqgHTz295Fx5mnYOnly9kH9ckBteoAlvT0Wtj?gv=true';
+const CAL_SHORT = 'https://calendar.app.google/UrbapWUStc9WCJcF7';
+const LINKEDIN = 'https://www.linkedin.com/in/cesarwerlich';
+
+export default function ContactPt() {
+  const onOutbound = (label: string, href: string) =>
+    track(Events.outboundClick, { location: 'contact_pt', label, href });
+
+  const onCta = (label: string) =>
+    track(Events.ctaClick, { location: 'contact_pt', label });
+
+  return (
+    <Section id="contact" label="Contato" className="py-24 sm:py-32">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+          {/* Left: pitch + primary qualification button + direct cards */}
+          <div className="md:col-span-5">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              Vamos conversar
+            </p>
+            <h2 className="mt-3 font-display text-4xl sm:text-5xl tracking-tight text-[color:var(--ink)]">
+              Agende uma conversa estratégica.
+            </h2>
+            <p className="mt-5 text-lg text-[color:var(--ink-soft)]">
+              Compartilhe o estágio da sua empresa, o principal gargalo atual e
+              o que você busca destravar. Avaliaremos com franqueza se posso
+              gerar alavancagem para o seu momento — ou indicarei outros
+              caminhos na minha rede.
+            </p>
+
+            <div className="mt-8 space-y-4">
+              <Link
+                href="/contato"
+                onClick={() => onCta('Preencher Diagnóstico Rápido')}
+                className="group flex items-center justify-between gap-3 rounded-[var(--radius-md)] border-2 border-[color:var(--accent)] bg-[color:var(--accent)] text-[color:var(--bg)] px-5 py-4 transition-all hover:bg-[color:var(--accent-hover)] shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      aria-hidden
+                    >
+                      <path
+                        d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"
+                        fill="currentColor"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                        clipRule="evenodd"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <div className="text-base font-semibold leading-tight">
+                      Preencher Diagnóstico Rápido
+                    </div>
+                    <div className="text-xs text-white/80 mt-0.5">
+                      Qualificação em 2 minutos para priorizar seu caso
+                    </div>
+                  </div>
+                </div>
+                <svg
+                  className="text-white transform group-hover:translate-x-1 transition-transform"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M6 4l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+
+              <a
+                href={CAL_SHORT}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  onOutbound('Abrir calendário (nova aba)', CAL_SHORT)
+                }
+                className="group flex items-center justify-between gap-3 rounded-[var(--radius-md)] border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 transition-colors hover:border-[color:var(--border-strong)]"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--accent)]/10 text-[color:var(--accent)]">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      aria-hidden
+                    >
+                      <path
+                        d="M4 6h12M4 6v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6M7 3v4M13 3v4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <div className="text-sm font-medium text-[color:var(--ink)]">
+                      Agendar no Google Calendar
+                    </div>
+                    <div className="text-xs text-[color:var(--muted)]">
+                      30 minutos · videoconferência
+                    </div>
+                  </div>
+                </div>
+                <svg
+                  className="text-[color:var(--muted)] group-hover:text-[color:var(--olive)] transition-colors"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M6 4l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href={LINKEDIN}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => onOutbound('LinkedIn', LINKEDIN)}
+                className="group flex items-center justify-between gap-3 rounded-[var(--radius-md)] border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-4 transition-colors hover:border-[color:var(--border-strong)]"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--accent)]/10 text-[color:var(--accent)]">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden
+                    >
+                      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.24 18h4.52V7.75H.24V18zM8.94 7.75h4.33v1.4h.06c.6-1.13 2.07-2.33 4.27-2.33 4.56 0 5.4 3 5.4 6.9V18H18.5v-3.96c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V18H9.17V7.75h-.23z" />
+                    </svg>
+                  </span>
+                  <div>
+                    <div className="text-sm font-medium text-[color:var(--ink)]">
+                      Conectar no LinkedIn
+                    </div>
+                    <div className="text-xs text-[color:var(--muted)]">
+                      linkedin.com/in/cesarwerlich
+                    </div>
+                  </div>
+                </div>
+                <svg
+                  className="text-[color:var(--muted)] group-hover:text-[color:var(--olive)] transition-colors"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M6 4l4 4-4 4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Right: embedded calendar */}
+          <div className="md:col-span-7">
+            <div className="rounded-[var(--radius-lg)] border border-[color:var(--border)] bg-[color:var(--surface)] p-2 sm:p-3 h-full">
+              <iframe
+                src={CAL_EMBED}
+                title="Agendar conversa com Cesar"
+                loading="lazy"
+                className="w-full h-[620px] rounded-[var(--radius-md)] border-0"
+                onLoad={() =>
+                  track(Events.sectionView, {
+                    section: 'calendar_iframe_loaded_pt',
+                  })
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
