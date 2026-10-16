@@ -1,6 +1,21 @@
 # Changelog
 
-## [v3 - 2026-10-15]
+## [v3.1 - 2026-10-16]
+
+### Added
+
+- Native Brazilian Portuguese (PT-BR) components (`app/components/pt/*`) and canonical root `/` positioning entry offers (**Máquina de Outbound & GTM B2B**, **Diagnóstico Operacional de 2 Semanas**) alongside core **COO Fracionado** advisory.
+- Preserved English canonical experience at `/en` (`app/en/page.tsx`) with bidirectional `hreflang` metadata (`pt-BR` and `en`).
+- 2-step B2B pre-qualification funnel:
+  - `/contato` (`app/contato/page.tsx`): Unified pre-qualification form page.
+  - `/lp/[slug]` (`app/lp/[slug]/page.tsx`): Dedicated distraction-free campaign landing pages (`/lp/gtm`, `/lp/operacoes`, `/lp/diagnostico`).
+  - `/obrigado` (`app/obrigado/page.tsx`): Conversion bridge page firing first-party ad conversion events (`generate_lead` / `lead_confirmed`) before rendering the embedded Google Calendar appointment widget.
+- `app/components/LeadForm.tsx` with Cloudflare Turnstile anti-bot verification + honeypot field (`website_hp`).
+- `app/api/leads/route.ts` endpoint for server-side validation, Turnstile verification, and optional CRM webhook forwarding (`LEAD_WEBHOOK_URL`).
+- First-party UTM & click-ID (`gclid`, `fbclid`) persistence (`app/lib/utm.ts`) and GTM `dataLayer` + PostHog lead identification helpers (`app/lib/analytics.ts`).
+- LGPD & GDPR compliance pages: `/privacidade`, `/privacy`, `/termos`, and `/terms`.
+
+## [v3.0 - 2026-10-15]
 
 ### Added
 

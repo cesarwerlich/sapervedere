@@ -3,7 +3,8 @@
 import Script from 'next/script';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { track } from '../lib/analytics';
+import { Events, identifyLead, pushDataLayer, track } from '../lib/analytics';
+import { captureUtms, type UtmParams } from '../lib/utm';
 
 export type ServiceOption = 'gtm' | 'diagnostico' | 'coo' | 'captacao';
 
@@ -56,7 +57,7 @@ export default function LeadForm({
   const [challenge, setChallenge] = useState('');
   const [honeypot, setHoneypot] = useState('');
 
-  const utmsRef = useRef<Record<string, string>>({});
+  const utmsRef = useRef<UtmParams>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
@@ -65,55 +66,7 @@ export default function LeadForm({
 
   // Capture UTM params from window.location.search and sessionStorage on mount
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    let collected: Record<string, string> = {};
-
-    try {
-      const stored = sessionStorage.getItem('sv_utms');
-      if (stored) {
-        collected = JSON.parse(stored);
-      }
-    } catch {
-      // ignore storage parse errors
-    }
-
-    try {
-      const searchParams = new URLSearchParams(window.location.search);
-      const utmKeys = [
-        'utm_source',
-        'utm_medium',
-        'utm_campaign',
-        'utm_content',
-        'utm_term',
-        'gclid',
-        'fbclid',
-      ];
-
-      let updated = false;
-      for (const key of utmKeys) {
-        const val = searchParams.get(key);
-        if (val) {
-          collected[key] = val;
-          updated = true;
-        }
-      }
-
-      searchParams.forEach((val, key) => {
-        if (key.startsWith('utm_') && val) {
-          collected[key] = val;
-          updated = true;
-        }
-      });
-
-      if (updated || Object.keys(collected).length > 0) {
-        sessionStorage.setItem('sv_utms', JSON.stringify(collected));
-      }
-    } catch {
-      // ignore query parsing errors
-    }
-
-    utmsRef.current = collected;
+    utmsRef.current = captureUtms();
   }, []);
 
   // Explicitly render Cloudflare Turnstile if script was loaded beforehand
@@ -197,19 +150,15 @@ export default function LeadForm({
         );
       }
 
-      // Conversion tracking
-      track('lead_submitted', { service, stage, ...activeUtms });
-
-      if (typeof window !== 'undefined') {
-        const win = window as unknown as { dataLayer?: unknown[] };
-        win.dataLayer = win.dataLayer || [];
-        win.dataLayer.push({
-          event: 'generate_lead',
-          service,
-          stage,
-          ...activeUtms,
-        });
-      }
+      // Conversion tracking (PostHog + GTM / GA4 / Meta dataLayer)
+      track(Events.leadSubmitted, { service, stage, ...activeUtms });
+      identifyLead(email, {
+        name,
+        company,
+        stage,
+        service,
+        ...activeUtms,
+      });
 
       router.push('/obrigado?service=' + encodeURIComponent(service));
     } catch (err: unknown) {
@@ -474,12 +423,8 @@ export default function LeadForm({
 /** Client helper component for firing conversion analytics on the obrigado page */
 export function ObrigadoTracker() {
   useEffect(() => {
-    track('generate_lead', { step: 'obrigado_page' });
-    if (typeof window !== 'undefined') {
-      const win = window as unknown as { dataLayer?: unknown[] };
-      win.dataLayer = win.dataLayer || [];
-      win.dataLayer.push({ event: 'lead_confirmed' });
-    }
+    track(Events.leadConfirmed, { step: 'obrigado_page' });
+    pushDataLayer('lead_confirmed', { step: 'obrigado_page' });
   }, []);
 
   return null;
