@@ -20,7 +20,7 @@ Fundadores e executivos de B2B SaaS (Bootstrapped, Pré-Seed, Seed e Series A) r
 3. **Ofertas de entrada de baixo atrito e alto valor percebido**:
    - Diagnóstico Operacional em 2 Semanas (Sprint fechada).
    - Estruturação de Máquina de Outbound & GTM B2B (Solução definitiva para canal proprietário).
-   - COO Fracionado (Liderança executiva contínua por uma fração do custo de um full-time).
+   - Fractional COO (Liderança executiva contínua por uma fração do custo de um full-time).
 
 ---
 
@@ -52,7 +52,7 @@ Fundadores e executivos de B2B SaaS (Bootstrapped, Pré-Seed, Seed e Series A) r
 ```
 [CAMPANHA LEADS B2B] — Saper Vedere | Acquisition Q4
 │
-├── [AD SET 01] — LP Operações (COO Fracionado)
+├── [AD SET 01] — LP Operações (Fractional COO)
 │   ├── Feed 1:1 — Var 1 (O Gargalo do Fundador)
 │   ├── Feed 1:1 — Var 2 (Escala Series A sem Caos)
 │   └── Story 9:16 — Var 3 (Microgerenciamento vs Cadência)
@@ -94,7 +94,7 @@ Fundadores e executivos de B2B SaaS (Bootstrapped, Pré-Seed, Seed e Series A) r
 
 ## 3. Pacote Criativo & Copywriting de Alta Conversão
 
-### 3.1. Landing Page 1: Operações (COO Fracionado & Escala)
+### 3.1. Landing Page 1: Operações (Fractional COO & Escala)
 
 - **URL de Destino**: `https://sapervedere.com.br/lp/operacoes?utm_source=instagram&utm_medium=paid_social&utm_campaign=coo_operacoes_test`
 
@@ -116,7 +116,7 @@ Fundadores e executivos de B2B SaaS (Bootstrapped, Pré-Seed, Seed e Series A) r
   >
   > Contratar um COO full-time com bagagem executiva para este momento custa R$ 50k a R$ 70k por mês — um compromisso pesado de caixa antes do Series A.
   >
-  > A alternativa inteligente que fundadores de B2B SaaS no Vale do Silício utilizam é o **COO Fracionado**.
+  > A alternativa inteligente que fundadores de B2B SaaS no Vale do Silício utilizam é o **Fractional COO**.
   >
   > Como Operating Partner, entro na rotina da sua startup por uma fração desse investimento para:
   >
@@ -128,7 +128,7 @@ Fundadores e executivos de B2B SaaS (Bootstrapped, Pré-Seed, Seed e Series A) r
   > Mais de 12 anos de bagagem executiva no terreno (Ex-COO Lightmeter YC W22). Sem slides genéricos: construímos os sistemas junto com você.
   >
   > Toque no link abaixo para conhecer o modelo de atuação e solicitar uma avaliação inicial de 30 minutos.
-- **Título do Link (Headline Meta Ads)**: COO Fracionado para Startups B2B
+- **Título do Link (Headline Meta Ads)**: Fractional COO para Startups B2B
 - **Descrição**: Escale da tração ao Series A sem caos operacional.
 - **Botão (CTA)**: Saiba mais
 
@@ -149,7 +149,7 @@ Fundadores e executivos de B2B SaaS (Bootstrapped, Pré-Seed, Seed e Series A) r
   >
   > Se hoje a sua empresa ainda depende da sua intuição diária para não descarrilar, você está vulnerável.
   >
-  > Através da **Saper Vedere**, atuo como COO Fracionado ao lado de fundadores B2B, implementando a disciplina operacional de quem já liderou reestruturações, geriu times de 90+ pessoas e operou empresas aceleradas pela Y Combinator (YC W22).
+  > Através da **Saper Vedere**, atuo como Fractional COO ao lado de fundadores B2B, implementando a disciplina operacional de quem já liderou reestruturações, geriu times de 90+ pessoas e operou empresas aceleradas pela Y Combinator (YC W22).
   >
   > Liberamos você para focar naquilo que só você pode fazer: falar com clientes-chave, direcionar o produto e liderar a estratégia.
   >
@@ -169,14 +169,14 @@ Fundadores e executivos de B2B SaaS (Bootstrapped, Pré-Seed, Seed e Series A) r
     - ✕ Reuniões eternas sem decisão
     - ✕ Caixa e runway sem visibilidade clara
   - [0:06 - 0:10] Solução:
-    - ✓ **COO Fracionado para Startups B2B**
+    - ✓ **Fractional COO para Startups B2B**
     - ✓ 12+ anos de operação (Ex-COO YC W22)
     - ✓ Governança, processos e autonomia para o time
   - [0:10 - 0:15] CTA:
     - 📲 **Toque na figurinha / link abaixo**
     - _Agende um diagnóstico operacional de 30 min_
 - **Texto de Apoio (Story/Reel Caption)**:
-  > Menos reuniões inúteis, mais autonomia para o time e visibilidade total do caixa. Conheça a atuação de COO Fracionado para fundadores B2B.
+  > Menos reuniões inúteis, mais autonomia para o time e visibilidade total do caixa. Conheça a atuação de Fractional COO para fundadores B2B.
 
 ---
 

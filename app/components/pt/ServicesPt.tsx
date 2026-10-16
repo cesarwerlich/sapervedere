@@ -34,7 +34,7 @@ const offers: Offer[] = [
     ctaText: 'Ver detalhes do GTM',
   },
   {
-    name: 'Operações, Financeiro & Escala (COO Fracionado)',
+    name: 'Operações, Financeiro & Escala (Fractional COO)',
     tag: 'Hands-on · 2–3 dias / semana',
     description:
       'Atuação como braço direito operacional do fundador para instalar rotina de execução, controle financeiro e governança de escala.',
@@ -47,7 +47,7 @@ const offers: Offer[] = [
     duration: 'Recorrente, mínimo de 3 meses',
     for: 'Fundadores que precisam de um operador experiente, não de conselheiro externo',
     href: '/lp/operacoes',
-    ctaText: 'Ver atuação de COO Fracionado',
+    ctaText: 'Ver atuação de Fractional COO',
     featured: true,
   },
   {

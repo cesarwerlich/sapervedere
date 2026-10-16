@@ -2,7 +2,7 @@ export async function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Saper Vedere — COO Fracionado &amp; Operating Partner</title>
+    <title>Saper Vedere — Fractional COO &amp; Operating Partner</title>
     <link>https://sapervedere.com.br</link>
     <description>Advisory executivo, Máquina de GTM &amp; Outbound e Diagnóstico Operacional para fundadores B2B SaaS.</description>
     <language>pt-BR</language>
@@ -16,7 +16,7 @@ export async function GET() {
       <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>COO Fracionado para Startups B2B</title>
+      <title>Fractional COO para Startups B2B</title>
       <link>https://sapervedere.com.br/lp/operacoes</link>
       <guid>https://sapervedere.com.br/lp/operacoes</guid>
       <description>Escale da tração inicial ao Series A sem caos operacional.</description>

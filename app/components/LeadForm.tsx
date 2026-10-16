@@ -20,7 +20,7 @@ export interface LeadFormProps {
 export const SERVICE_LABELS: Record<ServiceOption, string> = {
   gtm: 'Máquina de Outbound & GTM B2B',
   diagnostico: 'Diagnóstico Operacional (Sprint 2 Semanas)',
-  coo: 'COO Fracionado / Escala Operacional',
+  coo: 'Fractional COO / Escala Operacional',
   captacao: 'Preparação para Captação & Data Room',
 };
 

@@ -72,13 +72,13 @@ const LP_CONFIGS: Record<string, LpConfig> = {
   operacoes: {
     slug: 'operacoes',
     defaultService: 'coo',
-    pageTitle: 'COO Fracionado & Escala para Startups B2B',
-    tag: 'COO Fracionado & Escala Operacional',
+    pageTitle: 'Fractional COO & Escala para Startups B2B',
+    tag: 'Fractional COO & Escala Operacional',
     headline:
-      'COO Fracionado para Startups B2B: Escale da tração inicial ao Series A sem caos operacional',
+      'Fractional COO para Startups B2B: Escale da tração inicial ao Series A sem caos operacional',
     subhead:
       'A liderança e a governança de um C-level experiente por uma fração do custo de uma contratação full-time. Alinhe cadência executiva, financeiro, pessoas e processos rumo à próxima rodada.',
-    ctaButtonText: 'Conversar com um COO Fracionado',
+    ctaButtonText: 'Conversar com um Fractional COO',
     painPointsTitle:
       'Sinais de que o crescimento está gerando desordem interna:',
     painPoints: [
@@ -112,7 +112,7 @@ const LP_CONFIGS: Record<string, LpConfig> = {
       'Parceiro executivo direto dos founders na tomada de decisões difíceis e na resolução de conflitos operacionais.',
       'Libera a liderança para focar 100% em visão de produto, clientes e estratégia de longo prazo.',
     ],
-    formTitle: 'Solicitar Avaliação de COO Fracionado',
+    formTitle: 'Solicitar Avaliação de Fractional COO',
     formSubtitle:
       'Conte-nos sobre seu estágio e momento para avaliarmos o encaixe e abrirmos a agenda para um diagnóstico inicial.',
     formCta: 'Avançar para Agendamento da Conversa →',

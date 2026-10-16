@@ -88,7 +88,7 @@ export default function TermosPage() {
             <ul className="list-disc pl-5 space-y-1.5">
               <li>
                 <strong className="text-[color:var(--ink)]">
-                  COO Fracionado & Operating Partner:
+                  Fractional COO & Operating Partner:
                 </strong>{' '}
                 acompanhamento contínuo de cadência operacional, governança e
                 alinhamento executivo.

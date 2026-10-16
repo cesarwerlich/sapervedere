@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://sapervedere.com.br'),
   title: {
     default:
-      'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
+      'Saper Vedere — Fractional COO & Operating Partner para Startups B2B SaaS',
     template: '%s · Saper Vedere',
   },
   description:
-    'COO Fracionado e Operating Partner para fundadores e líderes B2B. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação.',
+    'Fractional COO e Operating Partner para fundadores e líderes B2B. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação.',
   keywords: [
-    'COO Fracionado',
+    'Fractional COO',
     'Operating Partner',
     'Startup Operator',
     'Venture Builder',
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     url: 'https://sapervedere.com.br',
     siteName: 'Saper Vedere',
     title:
-      'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
+      'Saper Vedere — Fractional COO & Operating Partner para Startups B2B SaaS',
     description:
-      'COO Fracionado e Operating Partner para fundadores e líderes B2B. GTM, operações e preparação para captação.',
+      'Fractional COO e Operating Partner para fundadores e líderes B2B. GTM, operações e preparação para captação.',
     images: [
       {
         url: '/logo-with-headline.png',
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
+      'Saper Vedere — Fractional COO & Operating Partner para Startups B2B SaaS',
     description:
-      'COO Fracionado para fundadores e líderes B2B. GTM, processos e governança de escala.',
+      'Fractional COO para fundadores e líderes B2B. GTM, processos e governança de escala.',
     images: ['/logo-with-headline.png'],
   },
   icons: {
@@ -158,7 +158,7 @@ export default function RootLayout({
               url: 'https://sapervedere.com.br',
               logo: 'https://sapervedere.com.br/logo-with-headline.png',
               description:
-                'COO Fracionado e Operating Partner para fundadores e líderes B2B. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação.',
+                'Fractional COO e Operating Partner para fundadores e líderes B2B. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação.',
               founder: {
                 '@type': 'Person',
                 name: 'Cesar Werlich',

@@ -22,7 +22,7 @@ export default function HeroPt() {
         <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[color:var(--surface)] px-4 py-1.5 text-xs sm:text-sm text-[color:var(--ink-soft)] mb-6 sm:mb-8">
           <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />
           <span>
-            COO Fracionado &amp; Operating Partner · 12+ anos de liderança
+            Fractional COO &amp; Operating Partner · 12+ anos de liderança
             executiva
           </span>
         </div>
