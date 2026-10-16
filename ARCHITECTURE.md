@@ -2,39 +2,37 @@
 
 ## Overview
 
-Saper Vedere is a Next.js App Router marketing site with a single canonical page and multiple theme-variant routes used for design and copy testing.
+Saper Vedere is a Next.js App Router marketing and B2B lead generation platform with a Brazilian Portuguese (PT-BR) canonical root (`/`), an English international route (`/en`), a 2-step pre-qualification funnel (`/contato`, `/lp/[slug]`, `/obrigado`), and legal compliance pages (`/privacidade`, `/termos`).
 
-Primary route:
+Primary routes:
 
-- `/` (default production experience)
+- `/` (default production experience in PT-BR)
+- `/en` (international English advisory experience)
+- `/contato` (unified B2B diagnostic & contact qualification page)
+- `/lp/gtm`, `/lp/operacoes`, `/lp/diagnostico` (dedicated paid-traffic landing pages)
+- `/obrigado` (post-submission conversion bridge + Google Calendar scheduling)
+- `/privacidade`, `/privacy`, `/termos`, `/terms` (LGPD & GDPR compliance pages)
 
-Variant routes (for comparison/testing):
+Variant routes (for comparison/testing, `noindex`):
 
-- `/theme-2`
-- `/theme-3`
-- `/theme-4`
-- `/theme-5`
-- `/theme-6`
-- `/theme-7`
+- `/theme-2` through `/theme-7`
 
 ## Core Structure
 
 - `app/layout.tsx`
-  - Global metadata, fonts, and viewport settings.
+  - Global PT-BR default metadata, `hreflang` alternates, fonts, and GA4 tags.
 - `app/page.tsx`
-  - Default concise homepage composition and theme wrapper classes.
-- `app/theme-2/page.tsx`
-  - Preserved long-form homepage variant from the pre-copy-refresh production version.
-- `app/components/*`
-  - Reusable sections (`Nav`, `Hero`, `Services`, `Companies`, `About`, `FitCheck`, `Contact`, `Footer`, `Section`).
-- `app/globals.css`
-  - Design tokens, utility token exports via `@theme`, and global styles.
-- `app/lib/analytics.ts`
-  - Lightweight event wrapper and event name constants.
-- `instrumentation-client.ts`
-  - PostHog initialization.
-- `next.config.ts`
-  - PostHog ingest proxy rewrites (`/ingest/*`).
+  - Default PT-BR homepage composition (`app/components/pt/*`) and theme wrapper classes.
+- `app/en/page.tsx`
+  - English homepage composition (`app/components/*`).
+- `app/components/LeadForm.tsx`
+  - Client pre-qualification form with UTM capture, Cloudflare Turnstile + honeypot, and conversion tracking.
+- `app/api/leads/route.ts`
+  - Server-side lead validation, Turnstile verification, and webhook forwarding.
+- `app/lib/analytics.ts` & `app/lib/utm.ts`
+  - Centralized PostHog + GTM `dataLayer` event wrapper and `sessionStorage` UTM/click-ID persistence.
+- `instrumentation-client.ts` & `next.config.ts`
+  - Defensive PostHog client initialization and `/ingest/*` proxy rewrites.
 - `public/*`
   - Logos, favicon, and static media assets.
 

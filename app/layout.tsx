@@ -26,19 +26,20 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://sapervedere.com.br'),
   title: {
     default:
-      'Saper Vedere — The operator founders bring in to scale without chaos',
+      'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
     template: '%s · Saper Vedere',
   },
   description:
-    'Fractional COO and operating partner for B2B SaaS founders. GTM systems, operational infrastructure, and fundraising readiness, pre-seed to Series A. Ex-Co-founder & COO at Lightmeter (YC W22).',
+    'COO Fracionado e Operating Partner para fundadores de B2B SaaS. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação, do pré-seed ao Series A. Ex-Co-founder & COO na Lightmeter (YC W22).',
   keywords: [
-    'Fractional COO',
+    'COO Fracionado',
     'Operating Partner',
     'Startup Operator',
     'Venture Builder',
     'B2B SaaS',
-    'GTM',
-    'Fundraising',
+    'GTM B2B',
+    'Outbound B2B',
+    'Captação de Recursos',
     'Cesar Werlich',
     'Saper Vedere',
     'Y Combinator',
@@ -46,15 +47,22 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Cesar Werlich' }],
   creator: 'Cesar Werlich',
+  alternates: {
+    canonical: 'https://sapervedere.com.br',
+    languages: {
+      'pt-BR': 'https://sapervedere.com.br',
+      en: 'https://sapervedere.com.br/en',
+    },
+  },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'pt_BR',
     url: 'https://sapervedere.com.br',
     siteName: 'Saper Vedere',
     title:
-      'Saper Vedere — The operator founders bring in to scale without chaos',
+      'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
     description:
-      'Fractional COO and operating partner for B2B SaaS founders. GTM, operations, fundraising — pre-seed to Series A.',
+      'COO Fracionado e Operating Partner para fundadores de B2B SaaS. GTM, operações e preparação para captação — do pré-seed ao Series A.',
     images: [
       {
         url: '/logo-with-headline.png',
@@ -67,9 +75,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Saper Vedere — The operator founders bring in to scale without chaos',
+      'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
     description:
-      'Fractional COO for B2B SaaS founders. Pre-seed to Series A. Ex-Lightmeter (YC W22).',
+      'COO Fracionado para fundadores B2B SaaS. Do pré-seed ao Series A. Ex-Lightmeter (YC W22).',
     images: ['/logo-with-headline.png'],
   },
   icons: {
@@ -107,7 +115,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full`}
     >
       <body className="min-h-full flex flex-col">

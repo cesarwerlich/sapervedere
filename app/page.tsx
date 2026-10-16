@@ -1,25 +1,25 @@
-import Nav from './components/Nav';
-import HeroConcise from './components/HeroConcise';
-import ServicesConcise from './components/ServicesConcise';
-import CompaniesConcise from './components/CompaniesConcise';
-import AboutConcise from './components/AboutConcise';
-import FitCheckConcise from './components/FitCheckConcise';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import NavPt from './components/pt/NavPt';
+import HeroPt from './components/pt/HeroPt';
+import FitCheckPt from './components/pt/FitCheckPt';
+import ServicesPt from './components/pt/ServicesPt';
+import CompaniesPt from './components/pt/CompaniesPt';
+import AboutPt from './components/pt/AboutPt';
+import ContactPt from './components/pt/ContactPt';
+import FooterPt from './components/pt/FooterPt';
 
 export default function Home() {
   return (
     <div className="theme-v2-blue theme-6-logo-blue-headings">
-      <Nav />
+      <NavPt />
       <main className="flex-1">
-        <HeroConcise />
-        <ServicesConcise />
-        <CompaniesConcise />
-        <AboutConcise />
-        <FitCheckConcise />
-        <Contact />
+        <HeroPt />
+        <FitCheckPt />
+        <ServicesPt />
+        <CompaniesPt />
+        <AboutPt />
+        <ContactPt />
       </main>
-      <Footer />
+      <FooterPt />
     </div>
   );
 }

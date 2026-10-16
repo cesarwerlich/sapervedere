@@ -1,20 +1,8 @@
 # Decisions
 
-Accepted decisions that are still in force. This is a startup-read file — every
-session reads it to avoid relitigating settled choices. Keep it short: one entry
-per decision, newest first. Supersede entries instead of deleting them so the
-record stays honest.
+Accepted architectural and product decisions still in force. For full context and trade-offs, see `docs/adr/`.
 
-- Use this file for lightweight, fast-moving decisions agents must know.
-- Use `docs/adr/` for decisions with long-term architectural consequences that
-  deserve a full record (context, alternatives, consequences).
-
-## Decision Log
-
-```text
-YYYY-MM-DD - Decision title
-Status: proposed | accepted | superseded
-Context:
-Decision:
-Consequences:
-```
+| ID       | Date       | Decision                                                                                                                                                            | Status   |
+| -------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| ADR-0001 | 2026-10-15 | Adopt `multi-agent-scaffold` governance, CI/CD, and worktree lane coordination                                                                                      | Accepted |
+| ADR-0002 | 2026-10-16 | Invert canonical root `/` to PT-BR, move English to `/en`, and implement 2-step `/contato` + `/lp/[slug]` → `/obrigado` conversion funnel with Cloudflare Turnstile | Accepted |
