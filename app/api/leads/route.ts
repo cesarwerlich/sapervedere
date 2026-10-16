@@ -170,14 +170,17 @@ export async function POST(request: Request) {
   const resendApiKey = process.env.RESEND_API_KEY?.trim();
   const notificationEmail =
     process.env.LEAD_NOTIFICATION_EMAIL?.trim() || 'cesardw@gmail.com';
+  const fromEmail =
+    process.env.LEAD_EMAIL_FROM?.trim() ||
+    'Saper Vedere Leads <contato@sapervedere.com.br>';
+
+  const utmObj =
+    typeof utms === 'object' && utms !== null
+      ? (utms as Record<string, string>)
+      : {};
 
   if (resendApiKey) {
     try {
-      const utmObj =
-        typeof utms === 'object' && utms !== null
-          ? (utms as Record<string, string>)
-          : {};
-
       const emailHtml = `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #1a1410; line-height: 1.6; background-color: #f7f3eb; border-radius: 12px; border: 1px solid rgba(26,20,16,0.1);">
           <h2 style="color: #194162; margin-top: 0; font-size: 22px; border-bottom: 2px solid #ede6d6; padding-bottom: 12px;">Novo Lead — Saper Vedere</h2>
@@ -212,7 +215,7 @@ export async function POST(request: Request) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Saper Vedere Leads <leads@news.farejador.pet>',
+          from: fromEmail,
           to: [notificationEmail],
           reply_to: sanitizedEmail,
           subject: `[Lead Saper Vedere] ${sanitizedName} — ${sanitizedCompany}`,
@@ -222,6 +225,43 @@ export async function POST(request: Request) {
       }).finally(() => clearTimeout(timeoutId));
     } catch (resendError) {
       console.error('Lead email notification failed:', resendError);
+    }
+  }
+
+  // e.2) Optional Telegram Notification
+  const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN?.trim();
+  const telegramChatId = process.env.TELEGRAM_CHAT_ID?.trim();
+  if (telegramBotToken && telegramChatId) {
+    try {
+      const text =
+        `🎯 *Novo Lead — Saper Vedere*\n\n` +
+        `👤 *Nome:* ${sanitizedName}\n` +
+        `📧 *E-mail:* ${sanitizedEmail}\n` +
+        `📱 *WhatsApp:* https://wa.me/${sanitizedWhatsapp.replace(/\D/g, '')} (${sanitizedWhatsapp})\n` +
+        `🏢 *Empresa:* ${sanitizedCompany}\n` +
+        `📊 *Estágio:* ${sanitizedStage}\n` +
+        `🧭 *Apoio:* ${sanitizedService}\n` +
+        (sanitizedChallenge ? `⚠️ *Gargalo:* ${sanitizedChallenge}\n` : '') +
+        `\n📍 *Origem:* ${utmObj.utm_source || 'direto'} / ${utmObj.utm_campaign || '-'}`;
+
+      const tgController = new AbortController();
+      const tgTimeoutId = setTimeout(() => tgController.abort(), 5000);
+
+      await fetch(
+        `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: telegramChatId,
+            text,
+            parse_mode: 'Markdown',
+          }),
+          signal: tgController.signal,
+        }
+      ).finally(() => clearTimeout(tgTimeoutId));
+    } catch (tgError) {
+      console.error('Telegram lead notification failed:', tgError);
     }
   }
 
