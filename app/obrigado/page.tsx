@@ -17,7 +17,7 @@ const CAL_FALLBACK_URL = 'https://calendar.app.google/UrbapWUStc9WCJcF7';
 
 export default function ObrigadoPage() {
   return (
-    <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--ink)] flex flex-col">
+    <div className="theme-v2-blue theme-6-logo-blue-headings min-h-screen bg-[color:var(--bg)] text-[color:var(--ink)] flex flex-col">
       {/* Client-side conversion tracker */}
       <ObrigadoTracker />
 

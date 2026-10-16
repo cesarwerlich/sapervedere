@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/theme-*', '/private/'],
+      disallow: ['/theme-*', '/private/', '/obrigado'],
     },
     sitemap: 'https://sapervedere.com.br/sitemap.xml',
   };

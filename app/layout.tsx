@@ -116,7 +116,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="theme-v2-blue theme-6-logo-blue-headings min-h-full flex flex-col">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-QTT2N0E134"
           strategy="beforeInteractive"

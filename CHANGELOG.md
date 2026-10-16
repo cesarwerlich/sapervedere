@@ -1,5 +1,14 @@
 # Changelog
 
+## [v3.3 - 2026-10-16]
+
+### Changed
+
+- **PT-BR Anchor Harmonization**: Translated all section navigation anchors across navbar, hero, and footer to Brazilian Portuguese (`#inicio`, `#servicos`, `#experiencia`, `#sobre`, `#quando-conversar`) with invisible fallback anchor IDs (`#top`, `#services`, `#companies`, `#about`, `#fit`) to guarantee zero broken links.
+- **Global Brand Blue Palette**: Updated `:root` design tokens in `app/globals.css` and added `theme-v2-blue theme-6-logo-blue-headings` to the root `<body>` in `app/layout.tsx`, establishing the authentic brand blue (`#1a5c88` / `#194162`) as the base styling across all pages (LPs, contact, thanks, compliance).
+- **Simplified `/contato` Page**: Streamlined `/contato` into a clean, distraction-free page tailored for visitors coming from the main site (eliminating redundant duplicate bios and 3-step conversation walkthroughs, adding subtle trust indicators, and focusing immediately on the qualification form).
+- **RSS & SEO Robots**: Added dynamic RSS 2.0 XML route at `app/feed.xml/route.ts` and disallowed `/obrigado` from search engine crawler indexing in `app/robots.ts`.
+
 ## [v3.2 - 2026-10-16]
 
 ### Changed

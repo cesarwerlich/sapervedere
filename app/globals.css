@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* ===== Design tokens — light mode (default) ===== */
+/* ===== Design tokens — light mode (default brand blue) ===== */
 :root {
   --bg: #f7f3eb;
   --surface: #ede6d6;
@@ -8,15 +8,15 @@
   --ink: #1a1410;
   --ink-soft: #3b322a;
   --muted: #6b6055;
-  --accent: #c65d3f;
-  --accent-hover: #a94a30;
+  --accent: #1a5c88;
+  --accent-hover: #194162;
   --olive: #194162;
   --border: rgba(26, 20, 16, 0.1);
   --border-strong: rgba(26, 20, 16, 0.2);
-  --accent-subtle: rgba(198, 93, 63, 0.12);
-  --accent-ring: rgba(198, 93, 63, 0.32);
-  --olive-subtle: rgba(25, 65, 98, 0.18);
-  --selection-bg: #c65d3f;
+  --accent-subtle: rgba(26, 92, 136, 0.14);
+  --accent-ring: rgba(26, 92, 136, 0.34);
+  --olive-subtle: rgba(25, 65, 98, 0.2);
+  --selection-bg: #1a5c88;
   --selection-fg: #f7f3eb;
 
   color-scheme: light;
@@ -52,15 +52,15 @@
     --ink: #f5f2eb;
     --ink-soft: #d9d3c7;
     --muted: #8a857e;
-    --accent: #e07a4f;
-    --accent-hover: #ea8c64;
+    --accent: #4a9fd1;
+    --accent-hover: #6cb6e3;
     --olive: #9bb5c9;
     --border: rgba(245, 242, 235, 0.1);
     --border-strong: rgba(245, 242, 235, 0.2);
-    --accent-subtle: rgba(224, 122, 79, 0.14);
-    --accent-ring: rgba(224, 122, 79, 0.36);
+    --accent-subtle: rgba(74, 159, 209, 0.16);
+    --accent-ring: rgba(74, 159, 209, 0.38);
     --olive-subtle: rgba(155, 181, 201, 0.2);
-    --selection-bg: #e07a4f;
+    --selection-bg: #4a9fd1;
     --selection-fg: #0d0c0a;
 
     color-scheme: dark;

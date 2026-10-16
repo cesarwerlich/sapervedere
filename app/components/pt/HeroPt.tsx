@@ -15,7 +15,9 @@ export default function HeroPt() {
     track(Events.ctaClick, { location: 'hero_pt', label });
 
   return (
-    <div id="top" className="relative pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <div id="inicio" className="relative pt-32 pb-20 sm:pt-40 sm:pb-28">
+      <span id="top" className="sr-only" tabIndex={-1} aria-hidden />
+      <span id="topo" className="sr-only" tabIndex={-1} aria-hidden />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[color:var(--surface)] px-4 py-1.5 text-xs sm:text-sm text-[color:var(--ink-soft)] mb-6 sm:mb-8">
           <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />

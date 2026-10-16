@@ -13,7 +13,7 @@ export default function FooterPt() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <div>
-            <Link href="#top" className="inline-flex items-center">
+            <Link href="#inicio" className="inline-flex items-center">
               <Image
                 src="/LogoSaperVedere.png"
                 alt="Saper Vedere"
@@ -36,13 +36,13 @@ export default function FooterPt() {
               Como ajudo
             </Link>
             <Link
-              href="#companies"
+              href="#experiencia"
               className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
             >
               Experiência
             </Link>
             <Link
-              href="#about"
+              href="#sobre"
               className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
             >
               Sobre
