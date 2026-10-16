@@ -34,7 +34,7 @@ const tiers: Tier[] = [
     name: 'GTM Sprint',
     tag: 'Project · 6–12 weeks',
     description:
-      'Install the outbound engine, customer experience workflows, and revenue operations that turn inbound interest into repeatable revenue. Built on the same system I scaled at Lightmeter.',
+      'Install the outbound engine, customer experience workflows, and revenue operations that turn inbound interest into repeatable revenue.',
     scope: [
       'Outbound playbook &amp; sales tooling',
       'Onboarding &amp; CX workflows',

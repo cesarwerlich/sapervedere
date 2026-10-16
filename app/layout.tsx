@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s · Saper Vedere',
   },
   description:
-    'COO Fracionado e Operating Partner para fundadores de B2B SaaS. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação, do pré-seed ao Series A. Ex-Co-founder & COO na Lightmeter (YC W22).',
+    'COO Fracionado e Operating Partner para fundadores e líderes B2B. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação.',
   keywords: [
     'COO Fracionado',
     'Operating Partner',
@@ -42,8 +42,6 @@ export const metadata: Metadata = {
     'Captação de Recursos',
     'Cesar Werlich',
     'Saper Vedere',
-    'Y Combinator',
-    'Lightmeter',
   ],
   authors: [{ name: 'Cesar Werlich' }],
   creator: 'Cesar Werlich',
@@ -62,7 +60,7 @@ export const metadata: Metadata = {
     title:
       'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
     description:
-      'COO Fracionado e Operating Partner para fundadores de B2B SaaS. GTM, operações e preparação para captação — do pré-seed ao Series A.',
+      'COO Fracionado e Operating Partner para fundadores e líderes B2B. GTM, operações e preparação para captação.',
     images: [
       {
         url: '/logo-with-headline.png',
@@ -77,7 +75,7 @@ export const metadata: Metadata = {
     title:
       'Saper Vedere — COO Fracionado & Operating Partner para Startups B2B SaaS',
     description:
-      'COO Fracionado para fundadores B2B SaaS. Do pré-seed ao Series A. Ex-Lightmeter (YC W22).',
+      'COO Fracionado para fundadores e líderes B2B. GTM, processos e governança de escala.',
     images: ['/logo-with-headline.png'],
   },
   icons: {

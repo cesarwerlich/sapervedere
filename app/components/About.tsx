@@ -1,8 +1,8 @@
 import Section from './Section';
 
 const tags = [
+  'Operating Partner',
   'IESE EMBA',
-  'Y Combinator W22',
   'MSc Production Engineering',
   'Lean Manufacturing certified',
   'Scrum Product Owner',
@@ -33,13 +33,12 @@ export default function About() {
             </p>
             <p>
               Over the past twelve years I&rsquo;ve brought that instinct into
-              startups &mdash; as co-founder of a digital agency, then COO and
-              CFO of a ride-hailing platform where I led the post-M&amp;A
-              restructuring of a 90-person team, then founder of a marketplace
-              in Brazil, then venture manager helping European founders turn
-              ideas into operating companies, and most recently Co-founder and
-              COO of <span className="text-[color:var(--ink)]">Lightmeter</span>
-              , a YC W22 B2B SaaS.
+              technology companies &mdash; as co-founder of a digital agency,
+              then COO and CFO of a ride-hailing platform where I led the
+              post-M&amp;A restructuring of a 90-person team, then founder of a
+              marketplace in Brazil, and venture manager helping founders turn
+              ideas into operating companies with repeatable GTM and financial
+              governance.
             </p>
             <p>
               I know what it feels like to wake up with fifty things on fire.

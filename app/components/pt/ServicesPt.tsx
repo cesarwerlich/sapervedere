@@ -73,7 +73,12 @@ export default function ServicesPt() {
     track(Events.ctaClick, { location: 'services_pt', label: offer, href });
 
   return (
-    <Section id="services" label="Como ajudo" className="py-24 sm:py-32">
+    <Section
+      id="servicos"
+      label="Como ajudo"
+      className="py-24 sm:py-32 relative"
+    >
+      <span id="services" className="sr-only" tabIndex={-1} aria-hidden />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-2xl">
           <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-[color:var(--muted)]">

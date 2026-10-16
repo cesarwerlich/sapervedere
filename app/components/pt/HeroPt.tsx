@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { track, Events } from '../../lib/analytics';
 
 const proof = [
-  { k: 'YC W22', v: 'Lightmeter' },
-  { k: '4', v: 'startups construídas' },
+  { k: '12+', v: 'anos de operação' },
+  { k: '4', v: 'empresas construídas' },
   { k: '90+', v: 'liderados em operação' },
-  { k: '3', v: 'continentes' },
+  { k: '3', v: 'continentes atendidos' },
 ];
 
 export default function HeroPt() {
@@ -20,8 +20,8 @@ export default function HeroPt() {
         <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[color:var(--surface)] px-4 py-1.5 text-xs sm:text-sm text-[color:var(--ink-soft)] mb-6 sm:mb-8">
           <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />
           <span>
-            COO Fracionado &amp; Operating Partner · Pré-seed ao Series A ·
-            Ex-COO Lightmeter (YC W22)
+            COO Fracionado &amp; Operating Partner · 12+ anos de liderança
+            executiva
           </span>
         </div>
 
@@ -34,9 +34,9 @@ export default function HeroPt() {
         </h1>
 
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl leading-relaxed text-[color:var(--ink-soft)] max-w-2xl">
-          Parceiro operacional e COO fracionado para fundadores de startups B2B
-          SaaS. Estruturação de máquinas de GTM &amp; Outbound, infraestrutura
-          operacional e preparação para captação — do pré-seed ao Series A.
+          Parceiro operacional e liderança executiva fracionada para fundadores
+          e empresas B2B. Estruturação de máquinas de GTM &amp; Outbound,
+          governança de processos, fluxo financeiro e alavancagem com IA.
         </p>
 
         <div className="mt-8 sm:mt-10 flex flex-wrap gap-3">
@@ -63,7 +63,7 @@ export default function HeroPt() {
             </svg>
           </Link>
           <Link
-            href="#services"
+            href="#servicos"
             onClick={() => onCta('Como funciona')}
             className="inline-flex items-center rounded-full border border-[color:var(--border-strong)] text-[color:var(--ink)] px-6 py-3 text-base font-medium hover:bg-[color:var(--surface)] transition-colors"
           >

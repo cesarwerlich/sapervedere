@@ -13,6 +13,8 @@ export interface LeadFormProps {
   title?: string;
   subtitle?: string;
   ctaLabel?: string;
+  priorityOptions?: string[];
+  selectionMode?: 'checkboxes' | 'select';
 }
 
 export const SERVICE_LABELS: Record<ServiceOption, string> = {
@@ -22,11 +24,43 @@ export const SERVICE_LABELS: Record<ServiceOption, string> = {
   captacao: 'Preparação para Captação & Data Room',
 };
 
+export const LP_BOTTLENECK_OPTIONS: Record<ServiceOption, string[]> = {
+  coo: [
+    'Estruturação de Processos & Rituais Executivos',
+    'Controle Financeiro, Runway & Gestão de Caixa',
+    'Alinhamento e Gestão de Pessoas / Equipe',
+    'Definição de Métricas, KPIs e Dashboards',
+    'Transição de Vendas do Fundador para Equipe Comercial',
+    'Preparação de Governança para Captação (Data Room)',
+  ],
+  gtm: [
+    'Estruturação de Máquina de Outbound & Cold Email',
+    'Infraestrutura de Domínios, Aquecimento e Entregabilidade',
+    'Organização de CRM & Pipeline de Vendas',
+    'Transição do Fundador para Vendedores / SDRs',
+    'Métricas de Conversão e Redução de Ciclo de Vendas',
+    'Enriquecimento de Leads e Definição de ICP',
+  ],
+  diagnostico: [
+    'Auditoria de Funil & Eficiência Comercial',
+    'Raio-X de Unit Economics (CAC, LTV, Churn)',
+    'Mapeamento de Gargalos Operacionais e Equipe',
+    'Plano Tático de Ação para os Próximos 90 Dias',
+  ],
+  captacao: [
+    'Preparação de Data Room & Métricas Históricas',
+    'Modelagem Financeira & Projeções de Crescimento',
+    'Narrativa Estratégica & Governança para Investidores',
+  ],
+};
+
 export const STAGE_OPTIONS = [
-  'Bootstrapped / Receita própria',
-  'Pré-Seed',
-  'Seed',
-  'Series A+',
+  'Operação inicial (1 a 5 pessoas · Validação)',
+  'Tração e crescimento (6 a 15 pessoas · Receita própria)',
+  'Em expansão e escala (16 a 50 pessoas)',
+  'Empresa consolidada (Mais de 50 pessoas)',
+  'Startup com investimento (Pré-Seed, Seed ou Series A)',
+  'Outro formato de negócio',
 ] as const;
 
 export default function LeadForm({
@@ -34,6 +68,8 @@ export default function LeadForm({
   title = 'Solicitar Diagnóstico & Agendar Conversa',
   subtitle = 'Preencha os dados abaixo para direcionarmos a conversa ao seu momento atual.',
   ctaLabel = 'Avançar para Escolha de Horário →',
+  priorityOptions,
+  selectionMode = 'checkboxes',
 }: LeadFormProps) {
   const router = useRouter();
 
@@ -49,10 +85,30 @@ export default function LeadForm({
   const [prevDefaultService, setPrevDefaultService] = useState(defaultService);
   const [service, setService] = useState<ServiceOption>(defaultService);
 
+  const availableCheckboxes =
+    priorityOptions && priorityOptions.length > 0
+      ? priorityOptions
+      : LP_BOTTLENECK_OPTIONS[service] || LP_BOTTLENECK_OPTIONS.coo;
+
+  const [selectedPriorities, setSelectedPriorities] = useState<string[]>([
+    availableCheckboxes[0],
+  ]);
+
   if (prevDefaultService !== defaultService) {
     setPrevDefaultService(defaultService);
     setService(defaultService);
+    const newDefaults =
+      priorityOptions && priorityOptions.length > 0
+        ? priorityOptions
+        : LP_BOTTLENECK_OPTIONS[defaultService] || LP_BOTTLENECK_OPTIONS.coo;
+    setSelectedPriorities([newDefaults[0]]);
   }
+
+  const togglePriority = (item: string) => {
+    setSelectedPriorities((prev) =>
+      prev.includes(item) ? prev.filter((p) => p !== item) : [...prev, item]
+    );
+  };
 
   const [challenge, setChallenge] = useState('');
   const [honeypot, setHoneypot] = useState('');
@@ -110,12 +166,23 @@ export default function LeadForm({
       return;
     }
 
+    if (selectionMode === 'checkboxes' && selectedPriorities.length === 0) {
+      setErrorMessage(
+        'Por favor, selecione pelo menos uma área ou gargalo de apoio prioritário.'
+      );
+      return;
+    }
+
     setIsSubmitting(true);
 
     const turnstileToken =
       (formData.get('cf-turnstile-response') as string) || '';
 
     const activeUtms = utmsRef.current;
+    const servicePayload =
+      selectionMode === 'checkboxes'
+        ? selectedPriorities.join(', ')
+        : SERVICE_LABELS[service] || service;
 
     const payload = {
       name,
@@ -123,7 +190,8 @@ export default function LeadForm({
       whatsapp,
       company,
       stage,
-      service,
+      service: servicePayload,
+      priorities: selectedPriorities,
       challenge: challenge.trim(),
       website_hp: '',
       turnstileToken,
@@ -151,12 +219,16 @@ export default function LeadForm({
       }
 
       // Conversion tracking (PostHog + GTM / GA4 / Meta dataLayer)
-      track(Events.leadSubmitted, { service, stage, ...activeUtms });
+      track(Events.leadSubmitted, {
+        service: servicePayload,
+        stage,
+        ...activeUtms,
+      });
       identifyLead(email, {
         name,
         company,
         stage,
-        service,
+        service: servicePayload,
         ...activeUtms,
       });
 
@@ -190,9 +262,12 @@ export default function LeadForm({
       {errorMessage && (
         <div
           role="alert"
-          className="mb-5 rounded-[var(--radius-md)] border border-red-500/30 bg-red-500/10 p-4 text-xs sm:text-sm text-red-700 dark:text-red-300"
+          className="mb-5 rounded-[var(--radius-md)] border border-[color:var(--accent)]/40 bg-[color:var(--accent-subtle)] p-4 text-xs sm:text-sm text-[color:var(--accent-hover)] font-medium flex items-center gap-2.5"
         >
-          {errorMessage}
+          <span aria-hidden className="text-base flex-shrink-0">
+            ⚠️
+          </span>
+          <span>{errorMessage}</span>
         </div>
       )}
 
@@ -298,7 +373,8 @@ export default function LeadForm({
             htmlFor="lead-stage"
             className="block text-xs font-semibold uppercase tracking-wider text-[color:var(--ink-soft)] mb-1.5"
           >
-            Estágio atual <span className="text-[color:var(--accent)]">*</span>
+            Estágio atual da empresa{' '}
+            <span className="text-[color:var(--accent)]">*</span>
           </label>
           <select
             id="lead-stage"
@@ -318,28 +394,57 @@ export default function LeadForm({
           </select>
         </div>
 
-        {/* Servico prioritario */}
+        {/* Onde busca apoio prioritario */}
         <div>
-          <label
-            htmlFor="lead-service"
-            className="block text-xs font-semibold uppercase tracking-wider text-[color:var(--ink-soft)] mb-1.5"
-          >
+          <label className="block text-xs font-semibold uppercase tracking-wider text-[color:var(--ink-soft)] mb-1.5">
             Onde você busca apoio prioritário?{' '}
             <span className="text-[color:var(--accent)]">*</span>
           </label>
-          <select
-            id="lead-service"
-            name="service"
-            required
-            value={service}
-            onChange={(e) => setService(e.target.value as ServiceOption)}
-            className="w-full px-3.5 py-2.5 text-sm border border-[color:var(--border)] bg-[color:var(--bg)] text-[color:var(--ink)] rounded-[var(--radius-md)] focus:border-[color:var(--accent)] focus:outline-none focus:ring-1 focus:ring-[color:var(--accent)] transition-colors cursor-pointer"
-          >
-            <option value="gtm">{SERVICE_LABELS.gtm}</option>
-            <option value="diagnostico">{SERVICE_LABELS.diagnostico}</option>
-            <option value="coo">{SERVICE_LABELS.coo}</option>
-            <option value="captacao">{SERVICE_LABELS.captacao}</option>
-          </select>
+
+          {selectionMode === 'checkboxes' ? (
+            <div className="space-y-2 pt-1">
+              <div className="grid grid-cols-1 gap-2">
+                {availableCheckboxes.map((item) => {
+                  const isChecked = selectedPriorities.includes(item);
+                  return (
+                    <label
+                      key={item}
+                      className={`flex items-start gap-3 p-3 rounded-[var(--radius-md)] border text-xs sm:text-sm cursor-pointer transition-colors ${
+                        isChecked
+                          ? 'border-[color:var(--accent)] bg-[color:var(--surface)] text-[color:var(--ink)] font-medium shadow-xs'
+                          : 'border-[color:var(--border)] bg-[color:var(--bg)] text-[color:var(--ink-soft)] hover:border-[color:var(--border-strong)]'
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={() => togglePriority(item)}
+                        className="mt-0.5 h-4 w-4 rounded border-[color:var(--border-strong)] text-[color:var(--accent)] focus:ring-[color:var(--accent)] cursor-pointer"
+                      />
+                      <span>{item}</span>
+                    </label>
+                  );
+                })}
+              </div>
+              <p className="text-[11px] text-[color:var(--muted)]">
+                Selecione todos os gargalos prioritários para o momento atual.
+              </p>
+            </div>
+          ) : (
+            <select
+              id="lead-service"
+              name="service"
+              required
+              value={service}
+              onChange={(e) => setService(e.target.value as ServiceOption)}
+              className="w-full px-3.5 py-2.5 text-sm border border-[color:var(--border)] bg-[color:var(--bg)] text-[color:var(--ink)] rounded-[var(--radius-md)] focus:border-[color:var(--accent)] focus:outline-none focus:ring-1 focus:ring-[color:var(--accent)] transition-colors cursor-pointer"
+            >
+              <option value="gtm">{SERVICE_LABELS.gtm}</option>
+              <option value="diagnostico">{SERVICE_LABELS.diagnostico}</option>
+              <option value="coo">{SERVICE_LABELS.coo}</option>
+              <option value="captacao">{SERVICE_LABELS.captacao}</option>
+            </select>
+          )}
         </div>
 
         {/* Desafio principal (textarea opcional) */}

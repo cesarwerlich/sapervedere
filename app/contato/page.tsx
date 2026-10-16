@@ -6,11 +6,11 @@ import LeadForm from '../components/LeadForm';
 export const metadata: Metadata = {
   title: 'Solicitar Diagnóstico & Contato',
   description:
-    'Agende uma conversa estratégica de 30 minutos com Cesar Werlich (ex-COO Lightmeter YC W22). Diagnóstico operacional, GTM e escala para fundadores B2B SaaS.',
+    'Agende uma conversa estratégica de 30 minutos com Cesar Werlich. Diagnóstico operacional, GTM e escala para fundadores e líderes B2B.',
   openGraph: {
     title: 'Solicitar Diagnóstico & Contato | Saper Vedere',
     description:
-      'Diagnóstico operacional e estruturação de GTM para fundadores B2B SaaS com Cesar Werlich (ex-COO Lightmeter YC W22).',
+      'Diagnóstico operacional e estruturação de GTM para fundadores e líderes B2B com Cesar Werlich.',
   },
 };
 
@@ -180,18 +180,17 @@ export default function ContatoPage() {
                       Fractional COO &amp; Operating Partner · Saper Vedere
                     </p>
                     <p className="mt-2 text-xs sm:text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                      Ex-Co-founder &amp; COO na <strong>Lightmeter</strong> (Y
-                      Combinator W22). Mais de 12 anos operando startups de alta
-                      complexidade, construindo infraestruturas de GTM e
-                      preparando empresas para rodadas institucionais de
-                      captação.
+                      Mais de 12 anos operando empresas e startups B2B,
+                      construindo infraestruturas de GTM, governança de
+                      processos e preparando organizações para crescimento
+                      sustentável e captação.
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-5 flex flex-wrap gap-2 text-xs font-medium">
                   <span className="rounded-full bg-[color:var(--surface)] border border-[color:var(--border)] px-3 py-1 text-[color:var(--ink-soft)]">
-                    🚀 Y Combinator W22 Alum
+                    🏛️ IESE EMBA · MSc Engenharia
                   </span>
                   <span className="rounded-full bg-[color:var(--surface)] border border-[color:var(--border)] px-3 py-1 text-[color:var(--ink-soft)]">
                     ⚙️ 12+ Anos Operando B2B

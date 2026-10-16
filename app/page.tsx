@@ -4,7 +4,6 @@ import FitCheckPt from './components/pt/FitCheckPt';
 import ServicesPt from './components/pt/ServicesPt';
 import CompaniesPt from './components/pt/CompaniesPt';
 import AboutPt from './components/pt/AboutPt';
-import ContactPt from './components/pt/ContactPt';
 import FooterPt from './components/pt/FooterPt';
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
         <ServicesPt />
         <CompaniesPt />
         <AboutPt />
-        <ContactPt />
       </main>
       <FooterPt />
     </div>

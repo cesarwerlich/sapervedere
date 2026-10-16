@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { track, Events } from '../lib/analytics';
 
 const proof = [
-  { k: 'YC W22', v: 'Lightmeter' },
+  { k: '12+', v: 'years operating' },
   { k: '4', v: 'startups built' },
   { k: '90+', v: 'person team led' },
   { k: '3', v: 'continents' },
@@ -26,9 +26,9 @@ export default function HeroConcise() {
         </h1>
 
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl leading-relaxed text-[color:var(--ink-soft)] max-w-2xl">
-          Fractional COO support for B2B SaaS founders who need clearer
-          execution, stronger operating rhythm, and a company that scales beyond
-          founder heroics. Ex-Co-founder &amp; COO at Lightmeter (YC W22).
+          Fractional COO support for B2B founders who need clearer execution,
+          stronger operating rhythm, and a company that scales beyond founder
+          heroics.
         </p>
 
         <div className="mt-8 sm:mt-10 flex flex-wrap gap-3">

@@ -51,11 +51,11 @@ export default function ObrigadoPage() {
           {/* Progress / Step Confirmation Banner */}
           <div className="mb-10 text-center sm:text-left rounded-[var(--radius-lg)] border border-[color:var(--border)] bg-[color:var(--surface)] p-6 sm:p-8 shadow-sm">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-bold text-xl flex-shrink-0">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[color:var(--olive)]/15 text-[color:var(--olive)] font-bold text-xl flex-shrink-0">
                 ✓
               </span>
               <div>
-                <p className="text-xs uppercase tracking-[0.18em] font-semibold text-emerald-600 dark:text-emerald-400">
+                <p className="text-xs uppercase tracking-[0.18em] font-semibold text-[color:var(--olive)]">
                   Passo 1 concluído! Recebemos seus dados.
                 </p>
                 <h1 className="mt-1 font-display text-2xl sm:text-3xl text-[color:var(--ink)] tracking-tight">

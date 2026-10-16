@@ -18,33 +18,6 @@ const contexts = [
   },
 ];
 
-const trackRecord = [
-  {
-    role: 'Co-fundador & COO',
-    company: 'Lightmeter (YC W22)',
-    focus:
-      'B2B SaaS open-source, captação internacional e operação distribuída.',
-  },
-  {
-    role: 'Direção de Operações & Estratégia',
-    company: 'Avantia',
-    focus:
-      'Escala de operações de tecnologia corporativa e governança em ambiente de alto crescimento.',
-  },
-  {
-    role: 'Liderança de Operações & Mercado',
-    company: 'Cianet',
-    focus:
-      'Transição operacional, expansão de mercado B2B e alinhamento de entregas.',
-  },
-  {
-    role: 'Engenharia de Produção & Lean',
-    company: 'Siemens & WEG',
-    focus:
-      'Fundamentos práticos de Lean Manufacturing, gestão de gargalos e disciplina de processos.',
-  },
-];
-
 export default function CompaniesPt() {
   return (
     <Section
@@ -83,35 +56,25 @@ export default function CompaniesPt() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-[var(--radius-lg)] border border-[color:var(--border)] bg-[color:var(--bg)] p-6 sm:p-8">
-          <h3 className="font-display text-2xl sm:text-3xl tracking-tight text-[color:var(--ink)]">
-            Histórico &amp; Empresas
-          </h3>
-          <p className="mt-2 text-sm text-[color:var(--muted)]">
-            Experiência direta em startups aceleradas pelo Y Combinator,
-            scale-ups e grandes referências industriais.
-          </p>
-
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            {trackRecord.map((item) => (
-              <div
-                key={item.company}
-                className="rounded-lg border border-[color:var(--border)] bg-[color:var(--surface)] p-4"
-              >
-                <div className="flex items-baseline justify-between gap-2">
-                  <span className="font-semibold text-[color:var(--ink)] text-base">
-                    {item.company}
-                  </span>
-                  <span className="text-xs text-[color:var(--accent)] font-medium">
-                    {item.role}
-                  </span>
-                </div>
-                <p className="mt-2 text-sm text-[color:var(--ink-soft)] leading-relaxed">
-                  {item.focus}
-                </p>
-              </div>
-            ))}
+        <div className="mt-10 rounded-[var(--radius-lg)] border border-[color:var(--border)] bg-[color:var(--bg)] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div>
+            <h3 className="font-display text-2xl sm:text-3xl tracking-tight text-[color:var(--ink)]">
+              Trajetória &amp; Governança
+            </h3>
+            <p className="mt-2 text-sm text-[color:var(--muted)] max-w-xl leading-relaxed">
+              Mais de 12 anos liderando operações, estruturando frentes de GTM e
+              apoiando fundadores em fases críticas de crescimento e captação.
+              Histórico detalhado, cases e recomendações no LinkedIn.
+            </p>
           </div>
+          <a
+            href="https://www.linkedin.com/in/cesarwerlich"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border-strong)] bg-[color:var(--surface)] px-5 py-3 text-sm font-medium text-[color:var(--ink)] hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] transition-colors whitespace-nowrap self-start sm:self-center"
+          >
+            Ver perfil no LinkedIn &rarr;
+          </a>
         </div>
       </div>
     </Section>

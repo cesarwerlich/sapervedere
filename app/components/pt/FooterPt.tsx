@@ -30,7 +30,7 @@ export default function FooterPt() {
 
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
             <Link
-              href="#services"
+              href="#servicos"
               className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
             >
               Como ajudo
@@ -49,22 +49,16 @@ export default function FooterPt() {
             </Link>
             <Link
               href="/contato"
-              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
+              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors font-medium"
             >
               Contato
             </Link>
-            <Link
-              href="/privacidade"
-              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
-            >
-              Privacidade
-            </Link>
-            <Link
-              href="/termos"
-              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
-            >
-              Termos
-            </Link>
+          </nav>
+        </div>
+
+        <div className="mt-10 pt-6 border-t border-[color:var(--border)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-[color:var(--muted)]">
+          <span>&copy; 2026 Saper Vedere. Todos os direitos reservados.</span>
+          <div className="flex flex-wrap items-center gap-4">
             <a
               href="https://www.linkedin.com/in/cesarwerlich"
               target="_blank"
@@ -75,22 +69,10 @@ export default function FooterPt() {
                   'https://www.linkedin.com/in/cesarwerlich'
                 )
               }
-              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
+              className="hover:underline"
             >
               LinkedIn
             </a>
-            <Link
-              href="/en"
-              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors font-medium"
-            >
-              EN
-            </Link>
-          </nav>
-        </div>
-
-        <div className="mt-10 pt-6 border-t border-[color:var(--border)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-[color:var(--muted)]">
-          <span>&copy; 2026 Saper Vedere. Todos os direitos reservados.</span>
-          <div className="flex items-center gap-4">
             <Link href="/privacidade" className="hover:underline">
               Política de Privacidade
             </Link>

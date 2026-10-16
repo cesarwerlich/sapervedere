@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title:
     'Saper Vedere — Fractional COO & Operating Partner for B2B SaaS Founders',
   description:
-    'Fractional COO and operating partner for B2B SaaS founders. GTM systems, operational infrastructure, and fundraising readiness, pre-seed to Series A. Ex-Co-founder & COO at Lightmeter (YC W22).',
+    'Fractional COO and operating partner for B2B SaaS founders. GTM systems, operational infrastructure, and fundraising readiness, pre-seed to Series A.',
   alternates: {
     canonical: 'https://sapervedere.com.br/en',
     languages: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title:
       'Saper Vedere — Fractional COO & Operating Partner for B2B SaaS Founders',
     description:
-      'Fractional COO for B2B SaaS founders. Pre-seed to Series A. Ex-Lightmeter (YC W22).',
+      'Fractional COO for B2B SaaS founders. Pre-seed to Series A. Systems, metrics, and operational scale.',
     images: ['/logo-with-headline.png'],
   },
 };
