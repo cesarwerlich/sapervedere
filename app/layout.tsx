@@ -129,6 +129,47 @@ export default function RootLayout({
             gtag('config', 'G-QTT2N0E134');
           `}
         </Script>
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${process.env.NEXT_PUBLIC_META_PIXEL_ID || '1900617237271607'}');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ProfessionalService',
+              name: 'Saper Vedere',
+              url: 'https://sapervedere.com.br',
+              logo: 'https://sapervedere.com.br/logo-with-headline.png',
+              description:
+                'COO Fracionado e Operating Partner para fundadores e líderes B2B. Máquina de GTM & Outbound, infraestrutura operacional e preparação para captação.',
+              founder: {
+                '@type': 'Person',
+                name: 'Cesar Werlich',
+                jobTitle: 'Fractional COO & Operating Partner',
+                url: 'https://www.linkedin.com/in/cesarwerlich',
+              },
+              areaServed: 'BR',
+              sameAs: [
+                'https://www.linkedin.com/in/cesarwerlich',
+                'https://github.com/cesarwerlich',
+              ],
+            }),
+          }}
+        />
         {children}
       </body>
     </html>

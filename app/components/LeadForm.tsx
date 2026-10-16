@@ -117,8 +117,11 @@ export default function LeadForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const siteKey =
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA';
+  const isTurnstileConfigured = Boolean(
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY &&
+    !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY.startsWith('1x')
+  );
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '';
 
   // Capture UTM params from window.location.search and sessionStorage on mount
   useEffect(() => {
@@ -127,7 +130,7 @@ export default function LeadForm({
 
   // Explicitly render Cloudflare Turnstile if script was loaded beforehand
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (!isTurnstileConfigured || typeof window === 'undefined') return;
     const win = window as unknown as {
       turnstile?: {
         render: (
@@ -150,7 +153,7 @@ export default function LeadForm({
         }
       }
     }
-  }, [siteKey]);
+  }, [isTurnstileConfigured, siteKey]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -245,10 +248,12 @@ export default function LeadForm({
 
   return (
     <div className="w-full">
-      <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-        strategy="afterInteractive"
-      />
+      {isTurnstileConfigured && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+        />
+      )}
 
       <div className="mb-6">
         <h3 className="font-display text-2xl sm:text-3xl tracking-tight text-[color:var(--ink)]">
@@ -282,6 +287,7 @@ export default function LeadForm({
           autoComplete="off"
           className="hidden"
           aria-hidden="true"
+          aria-label="Não preencher este campo"
         />
 
         {/* Nome */}
@@ -297,6 +303,7 @@ export default function LeadForm({
             name="name"
             type="text"
             required
+            autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Ex: Ana Silva"
@@ -318,6 +325,7 @@ export default function LeadForm({
             name="email"
             type="email"
             required
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="ana@suaempresa.com.br"
@@ -339,6 +347,7 @@ export default function LeadForm({
             name="whatsapp"
             type="tel"
             required
+            autoComplete="tel"
             value={whatsapp}
             onChange={(e) => setWhatsapp(e.target.value)}
             placeholder="(11) 99999-9999"
@@ -360,6 +369,7 @@ export default function LeadForm({
             name="company"
             type="text"
             required
+            autoComplete="organization"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
             placeholder="SuaEmpresa ou suaempresa.com.br"
@@ -469,15 +479,17 @@ export default function LeadForm({
           />
         </div>
 
-        {/* Cloudflare Turnstile Widget */}
-        <div className="pt-1 flex justify-center sm:justify-start">
-          <div
-            id="turnstile-container"
-            className="cf-turnstile"
-            data-sitekey={siteKey}
-            data-theme="light"
-          />
-        </div>
+        {/* Cloudflare Turnstile Widget (rendered when valid sitekey is configured) */}
+        {isTurnstileConfigured && (
+          <div className="pt-1 flex justify-center sm:justify-start">
+            <div
+              id="turnstile-container"
+              className="cf-turnstile"
+              data-sitekey={siteKey}
+              data-theme="light"
+            />
+          </div>
+        )}
 
         {/* Submit Button */}
         <div className="pt-2">
@@ -530,6 +542,18 @@ export function ObrigadoTracker() {
   useEffect(() => {
     track(Events.leadConfirmed, { step: 'obrigado_page' });
     pushDataLayer('lead_confirmed', { step: 'obrigado_page' });
+    if (typeof window !== 'undefined') {
+      const win = window as unknown as {
+        fbq?: (
+          action: string,
+          event: string,
+          params?: Record<string, unknown>
+        ) => void;
+      };
+      if (typeof win.fbq === 'function') {
+        win.fbq('track', 'Lead', { content_name: 'Lead Saper Vedere' });
+      }
+    }
   }, []);
 
   return null;
