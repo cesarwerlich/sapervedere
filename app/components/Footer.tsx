@@ -47,6 +47,18 @@ export default function Footer() {
             >
               About
             </Link>
+            <Link
+              href="/privacy"
+              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors"
+            >
+              Terms
+            </Link>
             <a
               href="https://www.linkedin.com/in/cesarwerlich"
               target="_blank"
@@ -61,11 +73,28 @@ export default function Footer() {
             >
               LinkedIn
             </a>
+            <Link
+              href="/"
+              className="text-[color:var(--muted)] hover:text-[color:var(--olive)] transition-colors font-medium"
+            >
+              PT
+            </Link>
           </nav>
         </div>
 
         <div className="mt-10 pt-6 border-t border-[color:var(--border)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-[color:var(--muted)]">
           <span>&copy; 2026 Saper Vedere</span>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:underline">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:underline">
+              Terms of Service
+            </Link>
+            <Link href="/" className="hover:underline font-medium">
+              Português (PT)
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
