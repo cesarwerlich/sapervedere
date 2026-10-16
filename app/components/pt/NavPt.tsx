@@ -7,8 +7,8 @@ import { track, Events } from '../../lib/analytics';
 
 const links = [
   { href: '#servicos', label: 'Como ajudo' },
-  { href: '#companies', label: 'Experiência' },
-  { href: '#about', label: 'Sobre' },
+  { href: '#experiencia', label: 'Experiência' },
+  { href: '#sobre', label: 'Sobre' },
   { href: '/contato', label: 'Contato' },
 ];
 
@@ -36,7 +36,7 @@ export default function NavPt() {
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 h-20 flex items-center justify-between">
         <Link
-          href="#top"
+          href="#inicio"
           className="flex items-center group"
           onClick={() => trackNavClick('logo')}
           aria-label="Saper Vedere — início"

@@ -197,7 +197,7 @@ export default async function LandingPage({
   const config = LP_CONFIGS[slug] || LP_CONFIGS['diagnostico'];
 
   return (
-    <div className="min-h-screen bg-[color:var(--bg)] text-[color:var(--ink)] flex flex-col">
+    <div className="theme-v2-blue theme-6-logo-blue-headings min-h-screen bg-[color:var(--bg)] text-[color:var(--ink)] flex flex-col">
       {/* Distraction-free Header: Logo + direct anchor CTA */}
       <header className="border-b border-[color:var(--border)] bg-[color:var(--bg)]/90 backdrop-blur-sm sticky top-0 z-40">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 h-20 flex items-center justify-between">

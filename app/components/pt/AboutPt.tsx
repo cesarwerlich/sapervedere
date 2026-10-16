@@ -11,7 +11,8 @@ const tags = [
 
 export default function AboutPt() {
   return (
-    <Section id="about" label="Sobre" className="py-24 sm:py-32">
+    <Section id="sobre" label="Sobre" className="py-24 sm:py-32">
+      <span id="about" className="sr-only" tabIndex={-1} aria-hidden />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
           <div className="md:col-span-4">

@@ -21,10 +21,11 @@ const contexts = [
 export default function CompaniesPt() {
   return (
     <Section
-      id="companies"
+      id="experiencia"
       label="Experiência"
       className="py-24 sm:py-32 bg-[color:var(--surface)]"
     >
+      <span id="companies" className="sr-only" tabIndex={-1} aria-hidden />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-3xl">
           <p className="text-xs sm:text-sm uppercase tracking-[0.18em] text-[color:var(--muted)]">
