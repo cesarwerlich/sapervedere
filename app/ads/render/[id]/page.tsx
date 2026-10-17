@@ -14,6 +14,7 @@ export function generateStaticParams() {
     { id: 'story-1' },
     { id: 'story-2' },
     { id: 'story-3' },
+    { id: 'cover' },
   ];
 }
 
@@ -250,6 +251,101 @@ export default async function AdRenderPage({
           <p className="text-2xl text-[#f7f3eb]/80 font-mono">
             Conversa de 30 minutos
           </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (id === 'cover') {
+    return (
+      <div className="w-[1640px] h-[624px] bg-[#0c1c2b] text-[#f7f3eb] relative overflow-hidden font-sans select-none flex flex-col justify-between p-14">
+        {/* Ambient lighting glow */}
+        <div className="absolute -top-32 -right-32 w-[650px] h-[650px] bg-[#1a5c88]/45 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute -bottom-32 left-1/4 w-[550px] h-[550px] bg-[#194162]/55 rounded-full blur-[120px] pointer-events-none" />
+
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff12_1px,transparent_1px)] [background-size:28px_28px] pointer-events-none opacity-60" />
+
+        {/* Top Bar / Brand Lockup (Safe Zone) */}
+        <div className="relative z-10 max-w-[1360px] w-full mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/icon.png"
+              alt="Saper Vedere"
+              className="w-14 h-14 rounded-xl border border-white/25 shadow-xl object-contain bg-[#194162]"
+            />
+            <div>
+              <span
+                className="font-serif text-3xl font-semibold tracking-[0.18em] uppercase block"
+                style={{ color: '#ffffff' }}
+              >
+                Saper Vedere
+              </span>
+              <span className="block text-xs font-mono tracking-widest text-[#6cb3df] uppercase mt-0.5 font-medium">
+                Fractional COO & Operating Partner
+              </span>
+            </div>
+          </div>
+
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+            <span
+              className="text-sm font-mono uppercase tracking-wider font-semibold"
+              style={{ color: '#ffffff' }}
+            >
+              Startups B2B · Pré-Seed a Series A
+            </span>
+          </div>
+        </div>
+
+        {/* Main Value Proposition (Center Safe Zone) */}
+        <div className="relative z-10 max-w-[1360px] w-full mx-auto my-auto py-2">
+          <div
+            className="font-serif text-[54px] leading-[1.12] tracking-tight font-medium max-w-[1140px]"
+            style={{ color: '#ffffff' }}
+          >
+            O operador que fundadores trazem para escalar sem caos operacional.
+          </div>
+          <p
+            className="text-[24px] mt-4 leading-relaxed font-light max-w-[1020px]"
+            style={{ color: 'rgba(255, 255, 255, 0.9)' }}
+          >
+            Destrave sua máquina de GTM & Outbound, estabeleça cadência de
+            gestão e alinhe indicadores para crescer com previsibilidade.
+          </p>
+        </div>
+
+        {/* Bottom Bar: 3 Core Pillars + Domain */}
+        <div className="relative z-10 max-w-[1360px] w-full mx-auto pt-5 border-t border-white/15 flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-sm font-mono">
+              <span className="text-[#6cb3df] font-bold">01</span>
+              <span className="font-sans font-medium text-white">
+                Máquina de GTM & Outbound
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-sm font-mono">
+              <span className="text-[#6cb3df] font-bold">02</span>
+              <span className="font-sans font-medium text-white">
+                Escala Operacional & KPIs
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-sm font-mono">
+              <span className="text-[#6cb3df] font-bold">03</span>
+              <span className="font-sans font-medium text-white">
+                Preparação para Captação
+              </span>
+            </div>
+          </div>
+
+          <div
+            className="flex items-center gap-2 font-mono text-lg font-semibold"
+            style={{ color: '#6cb3df' }}
+          >
+            <span>sapervedere.com.br</span>
+            <span>→</span>
+          </div>
         </div>
       </div>
     );
