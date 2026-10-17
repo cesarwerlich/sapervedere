@@ -2,8 +2,8 @@ import Section from '../Section';
 
 const goodFit = [
   'Transição de founder-led sales para máquina de GTM/Outbound repetível',
-  'Pós-captação precisando de cadência operacional e KPIs de execução',
-  'Preparando rodada Seed ou Series A sem tirar o olho da operação diária',
+  'Empresas em expansão precisando de cadência de gestão e KPIs de execução',
+  'Fundadores sobrecarregados apagando incêndios e buscando destravar a operação',
   'Busca alavancagem operacional real no terreno, não consultoria de apresentações',
 ];
 

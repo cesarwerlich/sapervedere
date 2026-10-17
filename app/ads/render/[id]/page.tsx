@@ -37,7 +37,7 @@ export default async function AdRenderPage({
           </div>
 
           <h1 className="font-serif text-[68px] leading-[1.12] text-[#194162] mt-16 tracking-tight font-medium">
-            &ldquo;Se você tirar 10 dias de férias hoje, sua startup cresce ou
+            &ldquo;Se você tirar 14 dias de férias hoje, sua empresa cresce ou
             trava?&rdquo;
           </h1>
 
@@ -118,7 +118,7 @@ export default async function AdRenderPage({
           </div>
 
           <h1 className="font-serif text-[64px] leading-[1.15] text-white mt-14 tracking-tight font-medium">
-            Sua startup tem algum destes 3 sintomas?
+            Sua empresa B2B tem algum destes 3 sintomas?
           </h1>
 
           <div className="mt-10 space-y-4 text-2xl text-[#f7f3eb]/90 font-mono">
@@ -161,7 +161,7 @@ export default async function AdRenderPage({
             Cesar Werlich · Fractional COO
           </div>
           <h1 className="font-serif text-[84px] font-medium text-[#194162] mt-16 leading-[1.1]">
-            Você manda na sua startup ou é escravo dela?
+            Você manda na sua empresa ou virou escravo da operação?
           </h1>
           <div className="mt-20 space-y-8 text-3xl text-[#554d45]">
             <div className="p-8 bg-black/[0.04] rounded-3xl border border-black/5 font-medium flex items-center gap-4">
@@ -197,7 +197,7 @@ export default async function AdRenderPage({
             Máquina de GTM · Saper Vedere
           </div>
           <h1 className="font-serif text-[80px] font-medium text-white mt-16 leading-[1.1]">
-            Quantas reuniões comerciais sua startup fechou esta semana?
+            Quantas reuniões comerciais sua empresa fechou esta semana?
           </h1>
           <p className="text-3xl text-[#f7f3eb]/75 mt-10 leading-relaxed">
             Se a resposta for &ldquo;apenas as que vieram por indicação&rdquo;,
@@ -231,7 +231,8 @@ export default async function AdRenderPage({
             14 dias para mapear todos os gargalos da sua operação.
           </h1>
           <p className="text-3xl text-[#f7f3eb]/70 mt-10 leading-relaxed">
-            Para fundadores B2B que precisam de tração antes da próxima rodada.
+            Para fundadores e sócios B2B que precisam de tração e margem
+            previsível.
           </p>
           <div className="mt-20 space-y-6 text-3xl font-mono text-[#f7f3eb]/85">
             <div className="p-8 bg-white/5 rounded-3xl border border-white/10">
@@ -294,7 +295,7 @@ export default async function AdRenderPage({
               className="text-sm font-mono uppercase tracking-wider font-semibold"
               style={{ color: '#ffffff' }}
             >
-              Startups B2B · Pré-Seed a Series A
+              Empresas B2B · Fundadores & Sócios
             </span>
           </div>
         </div>
@@ -334,7 +335,7 @@ export default async function AdRenderPage({
             <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-white/10 border border-white/15 text-sm font-mono">
               <span className="text-[#6cb3df] font-bold">03</span>
               <span className="font-sans font-medium text-white">
-                Preparação para Captação
+                Eficiência Operacional & Margem
               </span>
             </div>
           </div>

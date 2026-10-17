@@ -72,21 +72,21 @@ const LP_CONFIGS: Record<string, LpConfig> = {
   operacoes: {
     slug: 'operacoes',
     defaultService: 'coo',
-    pageTitle: 'Fractional COO & Escala para Startups B2B',
+    pageTitle: 'Fractional COO & Escala para Empresas B2B',
     tag: 'Fractional COO & Escala Operacional',
     headline:
-      'Fractional COO para Startups B2B: Escale da tração inicial ao Series A sem caos operacional',
+      'Fractional COO para Empresas B2B: Escale suas operações com lucro e previsibilidade sem sobrecarregar o fundador',
     subhead:
-      'A liderança e a governança de um C-level experiente por uma fração do custo de uma contratação full-time. Alinhe cadência executiva, financeiro, pessoas e processos rumo à próxima rodada.',
+      'A liderança e a governança de um C-level experiente por uma fração do custo de uma contratação full-time. Alinhe cadência executiva, financeiro, pessoas e processos para crescer com consistência.',
     ctaButtonText: 'Conversar com um Fractional COO',
     painPointsTitle:
       'Sinais de que o crescimento está gerando desordem interna:',
     painPoints: [
       'O fundador virou o maior gargalo da empresa: tudo depende da sua aprovação diária.',
       'Reuniões longas e improdutivas com prioridades que mudam a cada semana.',
-      'Visibilidade financeira limitada: incerteza sobre o burn rate real, unit economics e runway.',
+      'Visibilidade financeira limitada: incerteza sobre margem real, unit economics e fluxo de caixa.',
       'Gargalos na contratação, onboarding demorado e falta de alinhamento entre as lideranças.',
-      'Ansiedade ou insegurança diante de due diligence e checagens de investidores de venture capital.',
+      'Dificuldade em delegar e dependência excessiva dos sócios para destravar o dia a dia.',
     ],
     deliverablesTitle: 'Como atuamos na sua operação:',
     deliverables: [
@@ -95,16 +95,16 @@ const LP_CONFIGS: Record<string, LpConfig> = {
         desc: 'Implementação de OKRs acionáveis, cadência semanal de alinhamento executivo, eliminação de reuniões inúteis e prestação de contas transparente.',
       },
       {
-        title: 'Controle Financeiro & Projeção de Runway',
-        desc: 'Estruturação do fluxo de caixa, acompanhamento rigoroso do burn rate e modelagem de cenários para estender o runway sem surpresas.',
+        title: 'Controle Financeiro & Gestão de Caixa',
+        desc: 'Estruturação do fluxo de caixa, acompanhamento rigoroso de custos e modelagem de cenários para crescer com margem saudável.',
       },
       {
         title: 'Processos Críticos & Autonomia Operacional',
         desc: 'Documentação ágil de fluxos de trabalho e definição de papéis para que a equipe trabalhe com clareza e autonomia sem depender do fundador a todo instante.',
       },
       {
-        title: 'Preparação para Captação & Data Room',
-        desc: 'Organização antecipada de métricas históricas, contratos, governança e data room para conduzir negociações com VCs a partir de uma posição de força.',
+        title: 'Eficiência Operacional & Margem',
+        desc: 'Otimização de processos, eliminação de retrabalho com tecnologia e automação inteligente para aumentar a rentabilidade do negócio.',
       },
     ],
     proofPoints: [
@@ -123,9 +123,9 @@ const LP_CONFIGS: Record<string, LpConfig> = {
     pageTitle: 'Diagnóstico Operacional & GTM em 2 Semanas',
     tag: 'Sprint Operacional de 2 Semanas',
     headline:
-      'Diagnóstico Operacional & GTM em 2 Semanas para Fundadores B2B SaaS',
+      'Diagnóstico Operacional & GTM em 2 Semanas para Fundadores e Líderes B2B',
     subhead:
-      'Uma auditoria cirúrgica e imersiva para descobrir exatamente onde sua startup está vazando receita, tempo e caixa — com um roadmap tático de 90 dias pronto para execução.',
+      'Uma auditoria cirúrgica e imersiva para descobrir exatamente onde sua empresa está vazando receita, tempo e caixa — com um roadmap tático de 90 dias pronto para execução.',
     ctaButtonText: 'Solicitar Diagnóstico Operacional',
     painPointsTitle: 'Dúvidas e atritos que resolvemos nesta sprint:',
     painPoints: [

@@ -51,18 +51,18 @@ const offers: Offer[] = [
     featured: true,
   },
   {
-    name: 'Diagnóstico Operacional & Preparação para Captação',
+    name: 'Diagnóstico Operacional & Escala',
     tag: 'Auditoria intensiva · 2 semanas',
     description:
-      'Avaliação completa da operação, métricas de SaaS e estrutura da empresa para destravar gargalos ou blindar a rodada Seed/Series A.',
+      'Avaliação completa da operação, unit economics e processos para destravar gargalos de crescimento e estancar desperdício de caixa.',
     scope: [
-      'Auditoria de métricas SaaS (CAC, LTV, churn, cohorts)',
-      'Identificação de gargalos operacionais e de equipe',
-      'Organização de data room operacional e narrativa',
-      'Plano de ação prioritário para os primeiros 90 dias',
+      'Auditoria de métricas e conversão do funil comercial',
+      'Identificação de gargalos operacionais e dependência do fundador',
+      'Otimização de rotina de liderança, processos e margem',
+      'Plano de ação tático e prioritário para os primeiros 90 dias',
     ],
     duration: '2 semanas (diagnóstico intensivo)',
-    for: 'Fundadores preparando captação ou passando por momento de reestruturação',
+    for: 'Fundadores e sócios buscando destravar a operação ou reestruturar processos',
     href: '/lp/diagnostico',
     ctaText: 'Ver formato do Diagnóstico',
   },
@@ -88,9 +88,9 @@ export default function ServicesPt() {
             Três pilares de atuação.
           </h2>
           <p className="mt-5 text-lg text-[color:var(--ink-soft)]">
-            Formatos desenhados para o estágio da sua empresa: um motor de
+            Formatos desenhados para o momento da sua empresa: um motor de
             vendas focado, uma liderança de operações contínua ou um diagnóstico
-            rápido para captação.
+            intensivo de 2 semanas.
           </p>
         </div>
 
