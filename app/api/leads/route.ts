@@ -172,7 +172,7 @@ export async function POST(request: Request) {
     process.env.LEAD_NOTIFICATION_EMAIL?.trim() || 'cesardw@gmail.com';
   const fromEmail =
     process.env.LEAD_EMAIL_FROM?.trim() ||
-    'Saper Vedere Leads <contato@sapervedere.com.br>';
+    'Saper Vedere Leads <contato@updates.sapervedere.com.br>';
 
   const utmObj =
     typeof utms === 'object' && utms !== null
@@ -208,7 +208,7 @@ export async function POST(request: Request) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 6000);
 
-      await fetch('https://api.resend.com/emails', {
+      const resendRes = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${resendApiKey}`,
@@ -223,6 +223,15 @@ export async function POST(request: Request) {
         }),
         signal: controller.signal,
       }).finally(() => clearTimeout(timeoutId));
+
+      if (!resendRes.ok) {
+        const errorText = await resendRes.text();
+        console.error(
+          'Lead email notification failed (Resend API):',
+          resendRes.status,
+          errorText
+        );
+      }
     } catch (resendError) {
       console.error('Lead email notification failed:', resendError);
     }
@@ -233,21 +242,26 @@ export async function POST(request: Request) {
   const telegramChatId = process.env.TELEGRAM_CHAT_ID?.trim();
   if (telegramBotToken && telegramChatId) {
     try {
+      const escapeHtml = (str: string) =>
+        str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
       const text =
-        `🎯 *Novo Lead — Saper Vedere*\n\n` +
-        `👤 *Nome:* ${sanitizedName}\n` +
-        `📧 *E-mail:* ${sanitizedEmail}\n` +
-        `📱 *WhatsApp:* https://wa.me/${sanitizedWhatsapp.replace(/\D/g, '')} (${sanitizedWhatsapp})\n` +
-        `🏢 *Empresa:* ${sanitizedCompany}\n` +
-        `📊 *Estágio:* ${sanitizedStage}\n` +
-        `🧭 *Apoio:* ${sanitizedService}\n` +
-        (sanitizedChallenge ? `⚠️ *Gargalo:* ${sanitizedChallenge}\n` : '') +
-        `\n📍 *Origem:* ${utmObj.utm_source || 'direto'} / ${utmObj.utm_campaign || '-'}`;
+        `🎯 <b>Novo Lead — Saper Vedere</b>\n\n` +
+        `👤 <b>Nome:</b> ${escapeHtml(sanitizedName)}\n` +
+        `📧 <b>E-mail:</b> ${escapeHtml(sanitizedEmail)}\n` +
+        `📱 <b>WhatsApp:</b> <a href="https://wa.me/${sanitizedWhatsapp.replace(/\D/g, '')}">${escapeHtml(sanitizedWhatsapp)}</a>\n` +
+        `🏢 <b>Empresa:</b> ${escapeHtml(sanitizedCompany)}\n` +
+        `📊 <b>Estágio:</b> ${escapeHtml(sanitizedStage)}\n` +
+        `🧭 <b>Apoio:</b> ${escapeHtml(sanitizedService)}\n` +
+        (sanitizedChallenge
+          ? `⚠️ <b>Gargalo:</b> ${escapeHtml(sanitizedChallenge)}\n`
+          : '') +
+        `\n📍 <b>Origem:</b> ${escapeHtml(utmObj.utm_source || 'direto')} / ${escapeHtml(utmObj.utm_campaign || '-')}`;
 
       const tgController = new AbortController();
       const tgTimeoutId = setTimeout(() => tgController.abort(), 5000);
 
-      await fetch(
+      const tgRes = await fetch(
         `https://api.telegram.org/bot${telegramBotToken}/sendMessage`,
         {
           method: 'POST',
@@ -255,11 +269,20 @@ export async function POST(request: Request) {
           body: JSON.stringify({
             chat_id: telegramChatId,
             text,
-            parse_mode: 'Markdown',
+            parse_mode: 'HTML',
           }),
           signal: tgController.signal,
         }
       ).finally(() => clearTimeout(tgTimeoutId));
+
+      if (!tgRes.ok) {
+        const tgErr = await tgRes.text();
+        console.error(
+          'Telegram lead notification failed:',
+          tgRes.status,
+          tgErr
+        );
+      }
     } catch (tgError) {
       console.error('Telegram lead notification failed:', tgError);
     }
