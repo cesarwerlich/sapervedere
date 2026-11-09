@@ -257,6 +257,119 @@ export default function AdsPreviewPage() {
           </div>
         </header>
 
+        {/* NEW EDITORIAL STUDIO & VIDEO ADS SECTION */}
+        <section className="space-y-8 p-8 rounded-3xl bg-gradient-to-b from-[#0f172a] to-[#090d16] border border-[#1a5c88]/40 shadow-2xl">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-white/10 pb-6">
+            <div>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-semibold uppercase tracking-wider">
+                ★ Nova Geração · Fotografia Editorial &amp; Vídeos Narrados
+                (MP4)
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-serif text-white mt-3">
+                Campanha Editorial &amp; Vídeo (Padrão Financial Times / Stripe
+                Press)
+              </h2>
+              <p className="text-sm text-[#94a3b8] mt-2 max-w-3xl">
+                Zero caixas HTML genéricas, zero emojis. Fotografia de estúdio
+                de alta direção de arte e vídeos narrados com locução executiva
+                em português já enviados para a biblioteca da sua conta Meta Ads
+                (<code className="text-[#6cb3df]">act_3144305875761286</code>).
+              </p>
+            </div>
+          </div>
+
+          {/* 3 Editorial Photos */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                id: 'sv01',
+                campaign: 'SV-01 · Operações & Fractional COO',
+                title: 'Mesa Executiva Noturna (O Teste das Férias)',
+                lp: '/lp/operacoes',
+                img: '/ads/sv01-editorial.jpg',
+                video: '/ads/sv01-video.mp4',
+                metaVideoId: '1134501692400510',
+                metaHash: '538d2553d536028fa6b1139359f2fe73',
+              },
+              {
+                id: 'sv02',
+                campaign: 'SV-02 · Máquina de GTM & Outbound B2B',
+                title:
+                  'Prisma Óptico de Engenharia Comercial (Indicação é Sorte)',
+                lp: '/lp/gtm',
+                img: '/ads/sv02-editorial.jpg',
+                video: '/ads/sv02-video.mp4',
+                metaVideoId: '1842577750213616',
+                metaHash: '9ac086cb7fe278301c27b736bb317c44',
+              },
+              {
+                id: 'sv03',
+                campaign: 'SV-03 · Diagnóstico Operacional (14 Dias)',
+                title: 'Dossiê Executivo & Paquímetro (Raio-X de Margem)',
+                lp: '/lp/diagnostico',
+                img: '/ads/sv03-editorial.jpg',
+                video: '/ads/sv03-video.mp4',
+                metaVideoId: '1680458056807123',
+                metaHash: '1a1b27da311bd336340c6810d765f08a',
+              },
+            ].map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col gap-4 bg-[#070b12] p-5 rounded-2xl border border-white/10"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-[#6cb3df]">
+                    {item.campaign}
+                  </span>
+                  <span className="text-[11px] font-mono text-emerald-400">
+                    ✓ Na Biblioteca Meta
+                  </span>
+                </div>
+
+                <div className="relative aspect-square w-full rounded-xl overflow-hidden border border-white/10 bg-black">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-white">
+                    {item.title}
+                  </p>
+                  <video
+                    src={item.video}
+                    controls
+                    preload="metadata"
+                    className="w-full rounded-lg border border-white/10 bg-black"
+                  />
+                </div>
+
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2 text-xs font-mono">
+                  <Link
+                    href={item.img}
+                    target="_blank"
+                    download
+                    className="px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
+                  >
+                    Baixar JPG ↓
+                  </Link>
+                  <Link
+                    href={item.video}
+                    target="_blank"
+                    download
+                    className="px-3 py-2 rounded-lg bg-[#1a5c88] hover:bg-[#194162] text-white transition-colors"
+                  >
+                    Baixar Vídeo MP4 ↓
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Senior Designer Critique Card */}
         <div className="p-8 rounded-3xl bg-[#0f172a] border border-[#1e293b] shadow-2xl space-y-6">
           <div className="flex items-center gap-3">
